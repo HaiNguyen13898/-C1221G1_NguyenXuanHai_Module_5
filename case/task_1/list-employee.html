@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/ionicons.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
+
+
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+            list-style-type: none;
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+
+
+
+    </style>
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-none">
+    <a class="navbar" href="#">
+        <img src="https://furamavietnam.com/wp-content/uploads/2018/10/logo.png"
+             width="70" height="90" alt="">
+    </a>
+    <a class="navbar-brand" href="#">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+            aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="oi oi-menu"></span> Menu
+    </button>
+
+    <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul class="navbar-nav mr-auto">
+
+            <li class="nav-item">
+                <a class="nav-link" href="list-customer.html">Customer</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="list-employee.html">Employee</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="list-service.html">Service</a>
+            </li>
+
+
+            <li class="nav-item dropdown submenu dropdown ">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Contact
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="list-contract.html">Contact list</a>
+                    <a class="dropdown-item" href="#">Contact detail</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<h3 style="text-align: center">Manage Employee </h3>
+
+<nav class="navbar  navbar-light bg-light justify-content-between">
+    <a class="btn btn-lg btn-outline-dark bg-light" href="list-employee.html" style="color: #0b0b0b"><i class="fa-solid fa-circle-plus"></i> Create Employee</a>
+
+    <form action="/customers" class="form-inline">
+        <input class="form-control-lg border-primary"  style="margin: 5px" type="search" name="name" placeholder="Search name"
+               aria-label="Search">
+
+        <select class="form-control-lg " style="margin: 5px" name="customerType" class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+            <option value="">Employee Division</option>
+            <option value="">Sale-Marketing</option>
+            <option value="">Hành chính</option>
+        </select>
+
+        <select class="form-control-lg " style="margin: 5px" name="customerType" class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+            <option value="">Employee Position</option>
+            <option value="">Quản lý</option>
+            <option value="">Nhân viên</option>
+
+        </select>
+
+        <a class="btn btn-lg btn-outline-dark" type="submit" ><i class="fa-solid fa-magnifying-glass"></i>Search</a>
+    </form>
+</nav>
+
+
+
+<div class="table-responsive-md">
+    <table class="table" border="1" style="text-align: center">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">No.</th>
+            <th scope="col">Employee name</th>
+            <th scope="col">Date of birth</th>
+            <th scope="col">Id card</th>
+            <th scope="col">Salary</th>
+            <th scope="col">Phone number</th>
+            <th scope="col">Email</th>
+            <th scope="col">Address</th>
+            <th scope="col">Position</th>
+            <th scope="col">Education degree</th>
+            <th scope="col">Division</th>
+            <th scope="col">Detail</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Hồ Thị Yến</td>
+            <td>1995-12-12</td>
+            <td>999231723</td>
+            <td>14000000</td>
+            <td>0412352315</td>
+            <td>thiyen@gmail.com</td>
+            <td>K234/11 Điện Biên Phủ, Gia Lai</td>
+            <td>Quản lý</td>
+            <td>Đại học</td>
+            <td>Hành chính</td>
+            <td>
+                <a class="btn btn-light" href="">
+                    <i class="fa-solid fa-user"></i>
+                    Detail</a>
+            </td>
+            <td>
+                <a href=""><i class="fa-xl fa-solid fa-user-pen"></i></a>
+            </td>
+            <td>
+                <a href=""><i class="fa-xl fa-solid fa-user-slash"></i></a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Võ Công Toản</td>
+            <td>1980-04-04</td>
+            <td>123231365</td>
+            <td>17000000</td>
+            <td>0374443232</td>
+            <td>toan0404@gmail.com</td>
+            <td>77 Hoàng Diệu, Quảng Trị</td>
+            <td>Quản lý</td>
+            <td>Sau đại học</td>
+            <td>Quản lý</td>
+            <td>
+                <a class="btn btn-light" href="">
+                    <i class="fa-solid fa-user"></i>
+                    Detail</a>
+            </td>
+            <td>
+                <a href=""><i class="fa-xl fa-solid fa-user-pen"></i></a>
+            </td>
+            <td>
+                <a href=""><i class="fa-xl fa-solid fa-user-slash"></i></a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>Nguyễn Bỉnh Phát</td>
+            <td>1999-12-09</td>
+            <td>454363232</td>
+            <td>6000000</td>
+            <td>0902341231</td>
+            <td>phatphat@gmail.com</td>
+            <td>43 Yên Bái, Đà Nẵng</td>
+            <td>Nhân viên</td>
+            <td>Trung cấp</td>
+            <td>Sale-Marketing</td>
+            <td>
+                <a class="btn btn-light" href="">
+                    <i class="fa-solid fa-user"></i>
+                    Detail</a>
+            </td>
+            <td>
+                <a href=""><i class="fa-xl fa-solid fa-user-pen"></i></a>
+            </td>
+            <td>
+                <a href=""><i class="fa-xl fa-solid fa-user-slash"></i></a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">4</th>
+            <td>Khúc Nguyễn An Nghi</td>
+            <td>2000-11-08</td>
+            <td>964542311</td>
+            <td>7000000</td>
+            <td>0978653213</td>
+            <td>annghi20@gmail.com</td>
+            <td>294 Nguyễn Tất Thành, Đà Nẵng</td>
+            <td>Nhân viên</td>
+            <td>Cao Đẳng</td>
+            <td>Phục vụ</td>
+            <td>
+                <a class="btn btn-light" href="">
+                    <i class="fa-solid fa-user"></i>
+                    Detail</a>
+            </td>
+            <td>
+                <a href=""><i class="fa-xl fa-solid fa-user-pen"></i></a>
+            </td>
+            <td>
+                <a href=""><i class="fa-xl fa-solid fa-user-slash"></i></a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">5</th>
+            <td>Lê Văn Bình</td>
+            <td>1997-04-09</td>
+            <td>654231234</td>
+            <td>7000000</td>
+            <td>0934212314</td>
+            <td>binhlv@gmail.com</td>
+            <td>22 Yên Bái, Đà Nẵng</td>
+            <td>Quản lý</td>
+            <td>Cao Đẳng</td>
+            <td>Hành chính</td>
+            <td>
+                <a class="btn btn-light" href="">
+                    <i class="fa-solid fa-user"></i>
+                    Detail</a>
+            </td>
+            <td>
+                <a href=""><i class="fa-xl fa-solid fa-user-pen"></i></a>
+            </td>
+            <td>
+                <a href=""><i class="fa-xl fa-solid fa-user-slash"></i></a>
+            </td>
+        </tr>
+
+        </tbody>
+    </table>
+</div>
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-end">
+        <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1">Previous</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+        </li>
+    </ul>
+</nav>
+
+<footer class="page-footer font-small mdb-color lighten-3 pt-4" style="background-color: #9fcdff">
+
+    <!-- Footer Elements -->
+    <div class="container">
+
+        <!--Grid row-->
+        <div class="row">
+
+            <!--Grid column-->
+            <div class="col-lg-2 col-md-12 mb-4">
+
+                <!--Image-->
+                <div class="view overlay z-depth-1-half">
+                    <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
+                         class="img-fluid"
+                         alt="">
+                    <a href="">
+                        <div class="mask rgba-white-light"></div>
+                    </a>
+                </div>
+
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-2 col-md-6 mb-4">
+
+                <!--Image-->
+                <div class="view overlay z-depth-1-half">
+                    <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(78).webp"
+                         class="img-fluid"
+                         alt="">
+                    <a href="">
+                        <div class="mask rgba-white-light"></div>
+                    </a>
+                </div>
+
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-2 col-md-6 mb-4">
+
+                <!--Image-->
+                <div class="view overlay z-depth-1-half">
+                    <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(79).webp"
+                         class="img-fluid"
+                         alt="">
+                    <a href="">
+                        <div class="mask rgba-white-light"></div>
+                    </a>
+                </div>
+
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-2 col-md-12 mb-4">
+
+                <!--Image-->
+                <div class="view overlay z-depth-1-half">
+                    <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(81).webp"
+                         class="img-fluid"
+                         alt="">
+                    <a href="">
+                        <div class="mask rgba-white-light"></div>
+                    </a>
+                </div>
+
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-2 col-md-6 mb-4">
+
+                <!--Image-->
+                <div class="view overlay z-depth-1-half">
+                    <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(82).webp"
+                         class="img-fluid"
+                         alt="">
+                    <a href="">
+                        <div class="mask rgba-white-light"></div>
+                    </a>
+                </div>
+
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-2 col-md-6 mb-4">
+
+                <!--Image-->
+                <div class="view overlay z-depth-1-half">
+                    <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(84).webp"
+                         class="img-fluid"
+                         alt="">
+                    <a href="">
+                        <div class="mask rgba-white-light"></div>
+                    </a>
+                </div>
+
+            </div>
+            <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+
+    </div>
+    <!-- Footer Elements -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">
+        © 2022 Furama
+    </div>
+    <!-- Copyright -->
+
+</footer>
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-migrate-3.0.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="js/jquery.waypoints.min.js"></script>
+<script src="js/jquery.stellar.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/aos.js"></script>
+<script src="js/jquery.animateNumber.min.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script src="js/jquery.timepicker.min.js"></script>
+<script src="js/scrollax.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+<script src="js/google-map.js"></script>
+<script src="js/main.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+</html>
