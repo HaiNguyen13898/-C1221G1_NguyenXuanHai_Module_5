@@ -42,120 +42,134 @@
 
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-none">
-    <a class="navbar" href="#">
-        <img src="https://furamavietnam.com/wp-content/uploads/2018/10/logo.png"
-             width="70" height="90" alt="">
-    </a>
-    <a class="navbar-brand" href="#">Home</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
-            aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="oi oi-menu"></span> Menu
-    </button>
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">FURAMA</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+                aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="oi oi-menu"></span> Menu
+        </button>
 
-    <div class="collapse navbar-collapse" id="ftco-nav">
-        <ul class="navbar-nav mr-auto">
+        <div class="collapse navbar-collapse" id="ftco-nav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="list-customer.html">Customer</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="list-service.html">Service</a>
+                </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="list-customer.html">Customer</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="list-employee.html">Employee</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="list-service.html">Service</a>
-            </li>
-
-
-            <li class="nav-item dropdown submenu dropdown ">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Contact
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="list-contract.html">Contact list</a>
-                    <a class="dropdown-item" href="#">Contact detail</a>
-                </div>
-            </li>
-        </ul>
+                <li class="nav-item dropdown submenu dropdown ">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Contact
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="list-contract.html">Contact list</a>
+                        <a class="dropdown-item" href="#">Contact detail</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </div>
 </nav>
+<!-- END nav -->
+
+<div class="hero-wrap" style="background-image: url('images/bg_1.jpg');">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text d-flex align-itemd-end justify-content-center">
+            <div class="col-md-9 ftco-animate text-center d-flex align-items-end justify-content-center">
+                <div class="text">
+                    <p class="breadcrumbs mb-2"><span class="mr-2"><a href="index.html">Home</a></span>
+                        <span>About</span></p>
+                    <h1 class="mb-4 bread">Header</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <center>
     <h3>Create Service</h3>
     <div class="table">
-        <form th:action="@{/services/save}" th:object="${serviceDto}" method="post">
+        <form action="@{/services/save}" method="post">
             <fieldset>
                 <legend>Form create product</legend>
                 <table>
                     <tr>
                         <th>Name</th>
-                        <td><input class="form-control" type="text" th:field="*{svName}"></td>
-                        <td><p style="color: red" th:if="${#fields.hasErrors('svName')}" th:errors="*{svName}"></p></td>
-                    </tr>
-                    <tr>
-                        <th>Service area</th>
-                        <td><input class="form-control" type="text" th:field="*{svArea}"></td>
-                        <td><p style="color: red" th:if="${#fields.hasErrors('svArea')}" th:errors="*{svArea}"></p></td>
-                    </tr>
-                    <tr>
-                        <th>Service cost</th>
-                        <td><input class="form-control" type="text" th:field="*{svCost}"></td>
-                        <td><p style="color: red" th:if="${#fields.hasErrors('svCost')}" th:errors="*{svCost}"></p></td>
-                    </tr>
-                    <tr>
-                        <th>Max people</th>
-                        <td><input class="form-control" type="text" th:field="*{maxPeople}"></td>
-                        <td><p style="color: red" th:if="${#fields.hasErrors('maxPeople')}" th:errors="*{maxPeople}"></p>
+                        <td>
+                            <select class="form-control">
+                                <option value="">Villa No Beach Front</option>
+                                <option value="">Villa Beach Front</option>
+                                <option value="">Room Twin 02</option>
+                                <option value="">House Princess 02</option>
+                                <option value="">House Princess 01</option>
+                                <option value="">Apartment</option>
+                            </select>
                         </td>
                     </tr>
                     <tr>
+                        <th>Service area</th>
+                        <td><input class="form-control" type="text"></td>
+                    </tr>
+                    <tr>
+                        <th>Service cost</th>
+                        <td><input class="form-control" type="text"></td>
+                    </tr>
+                    <tr>
+                        <th>Max people</th>
+                        <td><input class="form-control" type="text"></td>
+                    </tr>
+                    <tr>
                         <th>Standard room</th>
-                        <td><input class="form-control" type="text" th:field="*{standardRoom}"></td>
-                        <td><p style="color: red" th:if="${#fields.hasErrors('standardRoom')}"
-                               th:errors="*{standardRoom}"></p></td>
+                        <td>
+                            <select class="form-control">
+                                <option value="">Vip</option>
+                                <option value="">Normal</option>
+                            </select>
+                        </td>
+
                     </tr>
                     <tr>
                         <th>Description other convenience</th>
-                        <td><input class="form-control" type="text" th:field="*{descriptionOtherConvenience}"></td>
-                        <td><p style="color: red" th:if="${#fields.hasErrors('descriptionOtherConvenience')}"
-                               th:errors="*{descriptionOtherConvenience}"></p></td>
+                        <td><input class="form-control" type="text"></td>
                     </tr>
                     <tr>
                         <th>Pool area</th>
-                        <td><input class="form-control" type="text" th:field="*{poolArea}"></td>
-                        <td><p style="color: red" th:if="${#fields.hasErrors('poolArea')}" th:errors="*{poolArea}"></p></td>
+                        <td><input class="form-control" type="text"></td>
                     </tr>
                     <tr>
                         <th>Number floor</th>
-                        <td><input class="form-control" type="text" th:field="*{numberFloor}"></td>
-                        <td><p style="color: red" th:if="${#fields.hasErrors('numberFloor')}"
-                               th:errors="*{numberFloor}"></p></td>
+                        <td><input class="form-control" type="text"></td>
                     </tr>
                     <tr>
                         <th>Rent type</th>
                         <td>
-                            <select class="form-control" th:field="*{rentType}">
-                                <option th:each="r : ${rentType}"
-                                        th:value="${r.id}"
-                                        th:text="${r.rentTypeName}">
-                                </option>
+                            <select class="form-control">
+                                <option value="">Year</option>
+                                <option value="">Month</option>
+                                <option value="">Day</option>
+                                <option value="">Hour</option>
                             </select>
                         </td>
                     </tr>
                     <tr>
                         <th>Service type</th>
                         <td>
-                            <select class="form-control" th:field="*{serviceType}">
-                                <option th:each="s : ${serviceType}"
-                                        th:value="${s.id}"
-                                        th:text="${s.serviceTypetName}">
-                                </option>
+                            <select class="form-control">
+                                <option value="">Villa</option>
+                                <option value="">House</option>
+                                <option value="">Room</option>
                             </select>
                         </td>
                     </tr>
 
                     <td></td>
-                    <td> <button class="btn btn-primary" type="submit">Submit</button></td>
+                    <td>
+                        <button class="btn btn-primary" type="submit">Submit</button>
+                    </td>
                     </tr>
                 </table>
             </fieldset>

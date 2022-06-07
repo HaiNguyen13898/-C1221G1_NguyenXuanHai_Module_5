@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Create Employee</title>
+    <title>Header</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i" rel="stylesheet">
 
@@ -25,8 +27,6 @@
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-
     <style>
         * {
             box-sizing: border-box;
@@ -34,131 +34,12 @@
             padding: 0px;
             list-style-type: none;
             text-decoration: none;
-            font-size: 13px;
         }
-
 
     </style>
 
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-none">
-    <a class="navbar" href="#">
-        <img src="https://furamavietnam.com/wp-content/uploads/2018/10/logo.png"
-             width="70" height="90" alt="">
-    </a>
-    <a class="navbar-brand" href="#">Home</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
-            aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="oi oi-menu"></span> Menu
-    </button>
-
-    <div class="collapse navbar-collapse" id="ftco-nav">
-        <ul class="navbar-nav mr-auto">
-
-            <li class="nav-item">
-                <a class="nav-link" href="list-customer.html">Customer</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="list-employee.html">Employee</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="list-service.html">Service</a>
-            </li>
-
-
-            <li class="nav-item dropdown submenu dropdown ">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Contact
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="list-contract.html">Contact list</a>
-                    <a class="dropdown-item" href="#">Contact detail</a>
-                </div>
-            </li>
-        </ul>
-    </div>
-</nav>
-<center>
-    <h3>Edit Employee</h3>
-    <div class="table">
-        <form action="@{/employees/save}"  method="post">
-            <fieldset>
-                <legend>Form edit employee</legend>
-                <table >
-                    <tr>
-                        <th>Employee name</th>
-                        <td><input class="form-control" type="text" value="Hồ Thị Yến"></td>
-                    </tr>
-                    <tr>
-                        <th>Date of birth</th>
-                        <td><input class="form-control" type="date" value="1995-12-12"></td>
-                    </tr>
-                    <tr>
-                        <th>Id card</th>
-                        <td><input class="form-control" type="text" value="999231723"></td>
-                    </tr>
-                    <tr>
-                        <th>Salary</th>
-                        <td><input class="form-control" type="text" value="14000000"></td>
-                    </tr>
-                    <tr>
-                        <th>Phone number</th>
-                        <td><input class="form-control" type="text" value="0412352315"></td>
-                    </tr>
-                    <tr>
-                        <th>Email</th>
-                        <td><input class="form-control" type="text" value="thiyen@gmail.com"></td>
-                    </tr>
-                    <tr>
-                        <th>Address</th>
-                        <td><input class="form-control" type="text" value="K234/11 Điện Biên Phủ, Gia Lai"></td>
-                    </tr>
-
-                    <tr>
-                        <th>Position</th>
-                        <td>
-                            <select class="form-control">
-                                <option value="Nam">Quản lý</option>
-                                <option value="Nữ">Nhân viên</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>Education degree</th>
-                        <td>
-                            <select class="form-control" >
-                                <option value="">Đại học</option>
-                                <option value="">Sau đại học</option>
-                                <option value="">Trung cấp</option>
-                                <option value="">Cao đẳng</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>Division</th>
-                        <td>
-                            <select class="form-control">
-                                <option value="">Hành chính</option>
-                                <option value="">Quản lý</option>
-                                <option value="">Sale-marketing</option>
-                                <option value="">Phục vụ</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <td></td>
-                    <td>
-                        <button class="btn btn-primary" type="submit">Submit</button>
-                    </td>
-                    </tr>
-                </table>
-            </fieldset>
-        </form>
-
-    </div>
-</center>
-
 
 <footer class="page-footer font-small mdb-color lighten-3 pt-4" style="background-color: #9fcdff">
 
@@ -278,6 +159,15 @@
 
 </footer>
 
+
+
+
+
+
+
+
+
+
 <script src="js/jquery.min.js"></script>
 <script src="js/jquery-migrate-3.0.1.min.js"></script>
 <script src="js/popper.min.js"></script>
@@ -295,15 +185,5 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
 <script src="js/google-map.js"></script>
 <script src="js/main.js"></script>
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
 </body>
 </html>
