@@ -6,23 +6,14 @@ import {Pet} from '../pet';
   templateUrl: './pet.component.html',
   styleUrls: ['./pet.component.css']
 })
-
 export class PetComponent implements OnInit {
-
   pet: Pet = {
     name: 'puppie',
-    image: 'https://kienthucbonphuong.com/images/202006/pet-la-gi/pet-la-gi.jpg'
+    image: 'http://yourdost-blog-images.s3-ap-southeast-1.amazonaws.com/wp-content/uploads/2016/01/03165939/Dogs.jpg'
   };
-
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
-
-  petInformation(pet: Pet) {
-    this.pet = pet
-  }
-
 
 }
-
