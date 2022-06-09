@@ -26,10 +26,25 @@ export class CaculatorComponent implements OnInit {
   //      this.result = String(this.num1 / this.num2);
   //    }
   // }
-  caculator(num1, num2, result) {
-
+  caculator(a: string) {
+    switch (a) {
+      case 'Addition(+)' :
+        this.result = String(this.num1 + this.num2);
+        break;
+      case 'Subtraction(-)' :
+        this.result = String(this.num1 - this.num2);
+        break;
+      case 'Multiplication(x)' :
+        this.result = String(this.num1 * this.num2);
+        break;
+      case 'Division(/)' :
+         if (this.num2 === 0) {
+          this.result = 'Mẫu số không được bằng 0';
+        } else if (this.num2 !== 0) {
+           this.result = String(this.num1 / this.num2);
+         }
+    }
   }
-
   constructor() {
   }
 

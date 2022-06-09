@@ -31,24 +31,22 @@
                     Customer
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/customers">Customer list</a>
-                    <a class="dropdown-item" href="/customers/booking">Booking</a>
+                    <a class="dropdown-item" [routerLink]="['/customer']">Customer list</a>
+                    <a class="dropdown-item" >Booking</a>
                   </div>
                 </li>
 
                 <li class="nav-item">
-                  <a class="nav-link" href="/services">Service</a>
+                  <a class="nav-link" [routerLink]="['/service']">Service</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/employees">Employee</a>
-                </li>
+
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdowns" role="button"
                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Contract
                   </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/contracts">Contract list</a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdowns">
+                    <a class="dropdown-item" [routerLink]="['/contract']">Contract list</a>
                     <a class="dropdown-item" href="/contractDetail">Contract detail list</a>
                   </div>
                 </li>
