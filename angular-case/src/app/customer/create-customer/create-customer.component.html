@@ -1,0 +1,64 @@
+
+  <h3>Create customer</h3>
+
+  <div class="table">
+    <form action="@{/customers/save}"  method="post">
+      <fieldset>
+        <legend>Customer Information</legend>
+        <table>
+          <tr>
+            <th>Name</th>
+            <td><input class="form-control" type="text"></td>
+          </tr>
+          <tr>
+            <th>Date of birth</th>
+            <td><input class="form-control" type="date" ></td>
+
+          </tr>
+          <tr>
+            <th>Gender</th>
+            <td>
+              <select class="form-control" >
+                <option value="Nam">Nam</option>
+                <option value="Nữ">Nữ</option>
+                <option value="Gay">Gay</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <th>Id card</th>
+            <td><input class="form-control" type="text" ></td>
+          </tr>
+          <tr>
+            <th>Phone number</th>
+            <td><input class="form-control" type="text" ></td>
+          </tr>
+          <tr>
+            <th>Email</th>
+            <td><input class="form-control" type="text" ></td>
+          </tr>
+          <tr>
+            <th>Address</th>
+            <td><input class="form-control" type="text" ></td>
+          </tr>
+          <tr>
+            <th>Customer Type</th>
+            <td>
+              <select class="form-control" >
+                <option value="">Diamond</option>
+                <option value="">Gold</option>
+                <option value="">Silver</option>
+                <option value="">Member</option>
+              </select>
+            </td>
+          </tr>
+          <td></td>
+          <td>
+            <button class="btn btn-primary" type="submit">Submit</button>
+          </td>
+        </table>
+      </fieldset>
+    </form>
+  </div>
+
+

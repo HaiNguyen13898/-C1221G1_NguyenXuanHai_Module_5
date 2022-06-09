@@ -1,0 +1,58 @@
+
+  <h3>Create contract</h3>
+  <div class="table">
+    <form action="@{/contracts/save}"  method="post">
+      <fieldset>
+        <legend>Form create contract</legend>
+        <table>
+          <tr>
+            <th>Contract date</th>
+            <td><input class="form-control" type="date" ></td>
+          </tr>
+          <tr>
+            <th>Contract end date</th>
+            <td><input class="form-control" type="date" ></td>
+          </tr>
+          <tr>
+            <th>Deposit</th>
+            <td><input class="form-control" type="text" ></td>
+          </tr>
+          <tr>
+            <th>Employee</th>
+            <td>
+              <select class="form-control" >
+                <option value="">Nguyễn Văn An</option>
+                <option value="">Lê Văn Bình</option>
+                <option value="">Hồ Thị Yến</option>
+                <option value="">Võ Công Toản</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <th>Customer</th>
+            <td>
+              <select class="form-control" >
+                <option value="">Nguyễn Xuân Tùng</option>
+                <option value="">Nguyễn Thị Hào</option>
+                <option value="">Phạm Xuân Diệu</option>
+                <option value="">Trương Đình NGhệ</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <th>Service</th>
+            <td>
+              <select class="form-control">
+                <option value="">Villa Beach Front</option>
+                <option value="">House Princess 01</option>
+                <option value="">House Princess 02</option>
+                <option value="">Villa No Beach Front</option>
+              </select>
+            </td>
+          </tr>
+          <td></td>
+          <td><button class="btn btn-primary" type="submit">Submit</button></td>
+        </table>
+      </fieldset>
+    </form>
+  </div>

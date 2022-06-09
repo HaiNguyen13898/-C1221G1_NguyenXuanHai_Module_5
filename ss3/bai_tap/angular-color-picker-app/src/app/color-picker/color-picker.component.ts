@@ -8,7 +8,7 @@ import {Component, OnInit} from '@angular/core';
 export class ColorPickerComponent implements OnInit {
 
 
-  color;
+  color: boolean;
 
   changeColor(value) {
     this.color = value;
