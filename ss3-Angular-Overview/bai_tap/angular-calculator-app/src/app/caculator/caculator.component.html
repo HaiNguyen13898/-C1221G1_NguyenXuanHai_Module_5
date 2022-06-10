@@ -1,0 +1,13 @@
+<h1>Caculator</h1>
+<div>
+  <input #element type="number" name="num1" (change)="changeValue(element.valueAsNumber)" >
+  <input type="number" name="num2" [(ngModel)]="num2">
+</div>
+<div>
+  <input type="button" (click)="caculator('Addition(+)')" value="Addition(+)">
+  <input type="button" (click)="caculator('Subtraction(-)')" value="Subtraction(-)">
+  <input type="button" (click)="caculator('Multiplication(x)')" value="Multiplication(x)">
+  <input type="button" (click)="caculator('Division(/)')" value="Division(/)">
+</div>
+
+<p>Result: {{result}} </p>
