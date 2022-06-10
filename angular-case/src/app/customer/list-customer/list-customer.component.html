@@ -31,7 +31,7 @@
       <table class="table" border="1" style="text-align: center">
         <thead class="thead-dark">
         <tr>
-          <th scope="col">No.</th>
+          <th scope="col">ID</th>
           <th scope="col">Customer name</th>
           <th scope="col">Date of birth</th>
           <th scope="col">Gender</th>
@@ -46,120 +46,164 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Nguyễn Xuân Tùng</td>
-          <td>2022-05-12</td>
-          <td>Nam</td>
-          <td>131234</td>
-          <td>092193123</td>
-          <td>tung@gmail.com</td>
-          <td>94 Lê Qunag Đạo</td>
-          <td>Platinium</td>
+        <tr *ngFor="let customer of customers">
+          <th scope="row">{{customer.idCustomer}}</th>
+          <td>{{customer.nameCustomer}}</td>
+          <td>{{customer.dateBirth}}</td>
+          <td>{{customer.gender}}</td>
+          <td>{{customer.idCard}}</td>
+          <td>{{customer.phone}}</td>
+          <td>{{customer.email}}</td>
+          <td>{{customer.address}}</td>
+          <td>{{customer.cusType}}</td>
           <td>
-            <a class="btn btn-light" href="">
-              <i class="fa-solid fa-user"></i>
+            <a class="btn btn-lg btn-light">
+              <i class="fa-solid fa-user" style="color: #7c1212"></i>
               Detail</a>
           </td>
           <td>
-            <a href=""><i class="fa-xl fa-solid fa-user-pen"></i></a>
+            <a class="btn btn-lg bg-light"><i class="fa-xl fa-solid fa-user-pen" style="color: #7c1212"></i></a>
           </td>
           <td>
-            <a href=""><i class="fa-xl fa-solid fa-user-slash"></i></a>
+            <a class="btn btn-lg bg-light" data-toggle="modal" data-target="#deleteModal">
+              <i class="fa-xl fa-solid fa-user-slash" style="color: #7c1212"></i></a>
           </td>
         </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Nguyễn Thị Hào</td>
-          <td>1970-11-07</td>
-          <td>Nữ</td>
-          <td>643431213</td>
-          <td>0945423362</td>
-          <td>thihao07@gmail.com</td>
-          <td>23 Nguyễn Hoàng, Đà Nẵng</td>
-          <td>Member</td>
-          <td>
-            <a class="btn btn-light" href="">
-              <i class="fa-solid fa-user"></i>
-              Detail</a>
-          </td>
-          <td>
-            <a href=""><i class="fa-xl fa-solid fa-user-pen"></i></a>
-          </td>
-          <td>
-            <a href=""><i class="fa-xl fa-solid fa-user-slash"></i></a>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Phạm Xuân Diệu</td>
-          <td>1992-08-08</td>
-          <td>Nam</td>
-          <td>865342123</td>
-          <td>0954333333</td>
-          <td>xuandieu92@gmail.com</td>
-          <td>K77/22 Thái Phiên, Quảng Trị</td>
-          <td>Gold</td>
-          <td>
-            <a class="btn btn-light" href="">
-              <i class="fa-solid fa-user"></i>
-              Detail</a>
-          </td>
-          <td>
-            <a href=""><i class="fa-xl fa-solid fa-user-pen"></i></a>
-          </td>
-          <td>
-            <a href=""><i class="fa-xl fa-solid fa-user-slash"></i></a>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">4</th>
-          <td>Trương Đình Nghệ</td>
-          <td>1990-02-27</td>
-          <td>Nam</td>
-          <td>488645199</td>
-          <td>0373213122</td>
-          <td>nghenhan2702@gmail.com</td>
-          <td>K323/12 Ông Ích Khiêm, Vinh</td>
-          <td>Diamond</td>
-          <td>
-            <a class="btn btn-light" href="">
-              <i class="fa-solid fa-user"></i>
-              Detail</a>
-          </td>
-          <td>
-            <a href=""><i class="fa-xl fa-solid fa-user-pen"></i></a>
-          </td>
-          <td>
-            <a href=""><i class="fa-xl fa-solid fa-user-slash"></i></a>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">5</th>
-          <td>Dương Văn Quan</td>
-          <td>1981-07-08</td>
-          <td>Nam</td>
-          <td>543432111</td>
-          <td>0490039241</td>
-          <td>duongquan@gmail.com</td>
-          <td>K453/12 Lê Lợi, Đà Nẵng</td>
-          <td>Diamond</td>
-          <td>
-            <a class="btn btn-light" href="">
-              <i class="fa-solid fa-user"></i>
-              Detail</a>
-          </td>
-          <td>
-            <a href=""><i class="fa-xl fa-solid fa-user-pen"></i></a>
-          </td>
-          <td>
-            <a href=""><i class="fa-xl fa-solid fa-user-slash"></i></a>
-          </td>
-        </tr>
+
+
+        <!--        <tr >-->
+        <!--          <th scope="row">1</th>-->
+        <!--          <td>Nguyễn Xuân Tùng</td>-->
+        <!--          <td>2022-05-12</td>-->
+        <!--          <td>Nam</td>-->
+        <!--          <td>131234</td>-->
+        <!--          <td>092193123</td>-->
+        <!--          <td>tung@gmail.com</td>-->
+        <!--          <td>94 Lê Qunag Đạo</td>-->
+        <!--          <td>Platinium</td>-->
+        <!--          <td>-->
+        <!--            <a class="btn btn-light" href="">-->
+        <!--              <i class="fa-solid fa-user"></i>-->
+        <!--              Detail</a>-->
+        <!--          </td>-->
+        <!--          <td>-->
+        <!--            <a href=""><i class="fa-xl fa-solid fa-user-pen"></i></a>-->
+        <!--          </td>-->
+        <!--          <td>-->
+        <!--            <a href=""><i class="fa-xl fa-solid fa-user-slash"></i></a>-->
+        <!--          </td>-->
+        <!--        </tr>-->
+        <!--        <tr>-->
+        <!--          <th scope="row">2</th>-->
+        <!--          <td>Nguyễn Thị Hào</td>-->
+        <!--          <td>1970-11-07</td>-->
+        <!--          <td>Nữ</td>-->
+        <!--          <td>643431213</td>-->
+        <!--          <td>0945423362</td>-->
+        <!--          <td>thihao07@gmail.com</td>-->
+        <!--          <td>23 Nguyễn Hoàng, Đà Nẵng</td>-->
+        <!--          <td>Member</td>-->
+        <!--          <td>-->
+        <!--            <a class="btn btn-light" href="">-->
+        <!--              <i class="fa-solid fa-user"></i>-->
+        <!--              Detail</a>-->
+        <!--          </td>-->
+        <!--          <td>-->
+        <!--            <a href=""><i class="fa-xl fa-solid fa-user-pen"></i></a>-->
+        <!--          </td>-->
+        <!--          <td>-->
+        <!--            <a href=""><i class="fa-xl fa-solid fa-user-slash"></i></a>-->
+        <!--          </td>-->
+        <!--        </tr>-->
+        <!--        <tr>-->
+        <!--          <th scope="row">3</th>-->
+        <!--          <td>Phạm Xuân Diệu</td>-->
+        <!--          <td>1992-08-08</td>-->
+        <!--          <td>Nam</td>-->
+        <!--          <td>865342123</td>-->
+        <!--          <td>0954333333</td>-->
+        <!--          <td>xuandieu92@gmail.com</td>-->
+        <!--          <td>K77/22 Thái Phiên, Quảng Trị</td>-->
+        <!--          <td>Gold</td>-->
+        <!--          <td>-->
+        <!--            <a class="btn btn-light" href="">-->
+        <!--              <i class="fa-solid fa-user"></i>-->
+        <!--              Detail</a>-->
+        <!--          </td>-->
+        <!--          <td>-->
+        <!--            <a href=""><i class="fa-xl fa-solid fa-user-pen"></i></a>-->
+        <!--          </td>-->
+        <!--          <td>-->
+        <!--            <a href=""><i class="fa-xl fa-solid fa-user-slash"></i></a>-->
+        <!--          </td>-->
+        <!--        </tr>-->
+        <!--        <tr>-->
+        <!--          <th scope="row">4</th>-->
+        <!--          <td>Trương Đình Nghệ</td>-->
+        <!--          <td>1990-02-27</td>-->
+        <!--          <td>Nam</td>-->
+        <!--          <td>488645199</td>-->
+        <!--          <td>0373213122</td>-->
+        <!--          <td>nghenhan2702@gmail.com</td>-->
+        <!--          <td>K323/12 Ông Ích Khiêm, Vinh</td>-->
+        <!--          <td>Diamond</td>-->
+        <!--          <td>-->
+        <!--            <a class="btn btn-light" href="">-->
+        <!--              <i class="fa-solid fa-user"></i>-->
+        <!--              Detail</a>-->
+        <!--          </td>-->
+        <!--          <td>-->
+        <!--            <a href=""><i class="fa-xl fa-solid fa-user-pen"></i></a>-->
+        <!--          </td>-->
+        <!--          <td>-->
+        <!--            <a href=""><i class="fa-xl fa-solid fa-user-slash"></i></a>-->
+        <!--          </td>-->
+        <!--        </tr>-->
+        <!--        <tr>-->
+        <!--          <th scope="row">5</th>-->
+        <!--          <td>Dương Văn Quan</td>-->
+        <!--          <td>1981-07-08</td>-->
+        <!--          <td>Nam</td>-->
+        <!--          <td>543432111</td>-->
+        <!--          <td>0490039241</td>-->
+        <!--          <td>duongquan@gmail.com</td>-->
+        <!--          <td>K453/12 Lê Lợi, Đà Nẵng</td>-->
+        <!--          <td>Diamond</td>-->
+        <!--          <td>-->
+        <!--            <a class="btn btn-light" href="">-->
+        <!--              <i class="fa-solid fa-user"></i>-->
+        <!--              Detail</a>-->
+        <!--          </td>-->
+        <!--          <td>-->
+        <!--            <a href=""><i class="fa-xl fa-solid fa-user-pen"></i></a>-->
+        <!--          </td>-->
+        <!--          <td>-->
+        <!--            <a href=""><i class="fa-xl fa-solid fa-user-slash"></i></a>-->
+        <!--          </td>-->
+        <!--        </tr>-->
 
         </tbody>
       </table>
     </div>
+
+    <div id="deleteModal" class="modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>Modal body text goes here.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Yes</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <nav aria-label="Page navigation example">
       <ul class="pagination justify-content-end">
         <li class="page-item disabled">
