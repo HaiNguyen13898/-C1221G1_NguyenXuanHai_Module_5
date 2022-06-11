@@ -551,12 +551,12 @@ button {
 }
 
 .our_room .room .bed_room {
-  padding: 33px 30px;
+  padding: 15px 10px 5px;
 }
 
 .our_room .room .bed_room h3 {
   color: #121212;
-  font-size: 25px;
+  font-size: 24px;
   line-height: 20px;
   font-weight: 500;
   transition: ease-in all 0.5s;

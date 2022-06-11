@@ -10,9 +10,9 @@ import { CreateCustomerComponent } from './customer/create-customer/create-custo
 import { UpdateCustomerComponent } from './customer/update-customer/update-customer.component';
 import { ListContractComponent } from './contract/list-contract/list-contract.component';
 import { CreateContractComponent } from './contract/create-contract/create-contract.component';
-import { ListServiceComponent } from './service/list-service/list-service.component';
-import { CreateServiceComponent } from './service/create-service/create-service.component';
-import { UpdateServiceComponent } from './service/update-service/update-service.component';
+import { ListFacilityComponent } from './facility/list-facility/list-facility.component';
+import { CreateFacilityComponent } from './facility/create-facility/create-facility.component';
+import { UpdateFacilityComponent } from './facility/update-facility/update-facility.component';
 import { HomeComponent } from './home/home.component';
 
 @NgModule({
@@ -25,9 +25,9 @@ import { HomeComponent } from './home/home.component';
     UpdateCustomerComponent,
     ListContractComponent,
     CreateContractComponent,
-    ListServiceComponent,
-    CreateServiceComponent,
-    UpdateServiceComponent,
+    ListFacilityComponent,
+    CreateFacilityComponent,
+    UpdateFacilityComponent,
     HomeComponent
   ],
   imports: [
