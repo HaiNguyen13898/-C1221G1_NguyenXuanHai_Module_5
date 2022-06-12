@@ -10,7 +10,6 @@ import {Customer} from "../../model/customer";
 export class ListCustomerComponent implements OnInit {
   customers: Customer[] = [];
 
-
   constructor() {
     this.customers.push({
       idCustomer: 1,
