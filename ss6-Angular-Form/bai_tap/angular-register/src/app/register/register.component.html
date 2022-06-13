@@ -1,0 +1,91 @@
+<p>register works!</p>
+<p>hair</p>
+<div class="container">
+  <div class="col-md-4">
+    <form [formGroup]="registerForm" (ngSubmit)="submitForm()">
+      <div class="mb-3">
+        <label>Email address</label>
+        <input formControlName="email"
+               type="email" class="form-control" aria-describedby="emailHelp">
+        <p style="color: red"
+           *ngIf="registerForm.controls.email.hasError('required')
+           && registerForm.controls.email.dirty">Email không được để trống</p>
+        <p style="color: red"
+           *ngIf="registerForm.controls.email.hasError('pattern')
+         && registerForm.controls.email.dirty">Email không hợp lệ (XXX@.com)</p>
+      </div>
+
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          formControlName="password"
+          id="password"
+          type="password"
+          class="form-control">
+        <div *ngIf="f.password.touched && f.password.invalid" class="alert alert-danger">
+          <div *ngIf="f.password.errors.required">Password is required.</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="confirm_password">Confirm Password</label>
+        <input
+          formControlName="confirm_password"
+          id="confirm_password"
+          type="password"
+          class="form-control">
+        <div *ngIf="f.confirm_password.touched && f.confirm_password.invalid" class="alert alert-danger">
+          <div *ngIf="f.confirm_password.errors.required">Password is required.</div>
+          <div *ngIf="f.confirm_password.errors.confirmedValidator">Password and Confirm Password must be match.</div>
+        </div>
+      </div>
+
+
+      <div class="mb-3">
+        <label>Country</label>
+        <select formControlName="country" >
+          <option value="volvo">Việt Nam</option>
+          <option value="saab">Hà Lan</option>
+          <option value="opel">Ba Lan</option>
+          <option value="audi">Mẹ Lan</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label>Age</label>
+        <input formControlName="age" type="number" class="form-control">
+        <p style="color: red"
+           *ngIf="registerForm.controls.age.hasError('required')
+           && registerForm.controls.age.dirty">Tuổi không được để trống</p>
+        <p style="color: red"
+           *ngIf="registerForm.controls.age.hasError('min')
+           && registerForm.controls.age.dirty">Phải từ 18 tuổi trở lên</p>
+        <p style="color: red"
+           *ngIf="registerForm.controls.age.hasError('max')
+           && registerForm.controls.age.dirty">Không được sống quá 100 tuổi</p>
+      </div>
+      <div class="mb-3">
+        <label>Phone</label>
+        <input formControlName="phone" type="number" class="form-control">
+        <p style="color: red"
+           *ngIf="registerForm.controls.phone.hasError('pattern')
+           && registerForm.controls.phone.dirty">Số điện thoại không hợp lệ (+84XXXXXXXXX)</p>
+      </div>
+      <div class="mb-3">
+        <label>Gender:</label>
+        <br>
+        <input formControlName="gender" type="radio" id="nam" value="Nam">
+          <label>Nam</label>
+        <br>
+          <input formControlName="gender" type="radio" id="nu" value="Nữ">
+          <label>Nữ</label>
+        <br>
+          <input formControlName="gender" type="radio" id="khac" value="Khác">
+          <label>Khác</label>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
+
+

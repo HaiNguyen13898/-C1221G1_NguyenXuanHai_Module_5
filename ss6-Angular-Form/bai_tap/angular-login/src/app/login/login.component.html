@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="col-md-4">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <!-- Email input -->
+      <div class="form-outline mb-4">
+        <input formControlName="email" type="email" class="form-control"/>
+        <p style="color: red"
+           *ngIf="loginForm.controls.email.hasError('required')
+           && loginForm.controls.email.dirty">Email không được để trống</p>
+        <p style="color: red"
+           *ngIf="loginForm.controls.email.hasError('pattern')
+         && loginForm.controls.email.dirty">Email không hợp lệ (XXX@.com)</p>
+        <label>Email address</label>
+      </div>
+
+      <!-- Password input -->
+      <div class="form-outline mb-4">
+        <input formControlName="password" type="password" class="form-control"/>
+        <p style="color: red" *ngIf="loginForm.controls.password.hasError('minlength')
+          && loginForm.controls.password.dirty">Mật khẩu ít nhất 6 ký tự</p>
+        <label>Password</label>
+      </div>
+
+      <!-- Submit button -->
+      <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+    </form>
+  </div>
+</div>

@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Contract} from "../../model/contract";
+import {Customer} from "../../model/customer";
+import {Facility} from "../../model/facility";
 
 @Component({
   selector: 'app-list-contract',
@@ -7,7 +9,7 @@ import {Contract} from "../../model/contract";
   styleUrls: ['./list-contract.component.css']
 })
 export class ListContractComponent implements OnInit {
-  contracts: Contract [] = []
+  contracts: Contract [] = [];
 
   constructor() {
     this.contracts.push({
@@ -15,6 +17,7 @@ export class ListContractComponent implements OnInit {
       startDateContract: '2020-07-14',
       endDateContract: '2020-07-28',
       deposit: 3000,
+
     })
     this.contracts.push({
       icContract: 2,
