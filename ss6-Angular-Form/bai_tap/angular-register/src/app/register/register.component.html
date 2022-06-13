@@ -21,8 +21,12 @@
           <input formControlName="password" type="password" class="form-control">
           <p style="color: red"
              *ngIf="registerForm.controls.password.hasError('required')
-           && registerForm.controls.password.dirty">Ít nhất 6 ký tự</p>
+           && registerForm.controls.password.dirty">Không được để trống</p>
+          <p style="color: red"
+             *ngIf="registerForm.controls.password.hasError('minlength')
+           && registerForm.controls.password.dirty">ít nhất 6 ký tự</p>
         </div>
+
 
         <div class="mb-3 form-group">
           <label>Confirm password</label>
@@ -31,7 +35,7 @@
              *ngIf="registerForm.controls.confirmPassword.hasError('required')
            && registerForm.controls.confirmPassword.dirty">Không được để trống</p>
           <p style="color: red"
-             *ngIf="f.confirmPassword.errors.mustMatch">Phải trùng với passwork</p>
+             *ngIf="f.confirmPassword.errors.MustMatch">Phải trùng với passwork</p>
         </div>
 
 

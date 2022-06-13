@@ -33,7 +33,7 @@ export class RegisterComponent implements OnInit {
         return;
       }
       if (control.value !== matchingControl.value) {
-        matchingControl.setErrors({mustMatch: true});
+        matchingControl.setErrors({MustMatch: true});
       } else {
         matchingControl.setErrors(null);
       }
