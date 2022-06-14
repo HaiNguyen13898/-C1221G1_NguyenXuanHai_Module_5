@@ -1,41 +1,69 @@
 <h3 style="text-align: center">Create contract</h3>
 <div class="table">
-  <form action="@{/contracts/save}" method="post">
+  <form [formGroup]="createContractForm" (ngSubmit)="createContract()" >
     <fieldset>
       <legend style="text-align: center">Form create contract</legend>
       <table class="center">
         <tr>
-          <th>Contract date</th>
-          <td><input class="form-control" type="date"></td>
+          <th>Contract start date</th>
+          <td><input formControlName="startDateContract" class="form-control" type="date"></td>
+          <td>
+            <p style="color: red"
+               *ngIf="createContractForm.controls.startDateContract.hasError('required')
+               && createContractForm.controls.startDateContract.touched">Không được để trống</p>
+          </td>
         </tr>
         <tr>
           <th>Contract end date</th>
-          <td><input class="form-control" type="date"></td>
+          <td><input formControlName="endDateContract" class="form-control" type="date"></td>
+          <td>
+            <p style="color: red"
+               *ngIf="createContractForm.controls.endDateContract.hasError('required')
+               && createContractForm.controls.endDateContract.touched">Không được để trống</p>
+          </td>
         </tr>
         <tr>
           <th>Deposit</th>
-          <td><input class="form-control" type="text"></td>
+          <td><input formControlName="deposit" class="form-control" type="text"></td>
+          <td>
+            <p style="color: red"
+               *ngIf="createContractForm.controls.deposit.hasError('required')
+               && createContractForm.controls.deposit.touched">Không được để trống</p>
+            <p style="color: red"
+               *ngIf="createContractForm.controls.deposit.hasError('pattern')
+               && createContractForm.controls.deposit.touched">Không được nhập số âm, không được nhập chữ</p>
+          </td>
         </tr>
         <tr>
           <th>Customer</th>
-          <td>
-            <select class="form-control">
-              <option value="">Nguyễn Xuân Tùng</option>
-              <option value="">Nguyễn Thị Hào</option>
-              <option value="">Phạm Xuân Diệu</option>
-              <option value="">Trương Đình NGhệ</option>
+          <td >
+            <select formControlName="customer" class="form-control">
+              <option value="Nguyễn Xuân Tùng">Nguyễn Xuân Tùng</option>
+              <option value="Nguyễn Thị Hào">Nguyễn Thị Hào</option>
+              <option value="Phạm Xuân Diệu">Phạm Xuân Diệu</option>
+              <option value="Trương Đình NGhệ">Trương Đình NGhệ</option>
             </select>
+          </td>
+          <td>
+            <p style="color: red"
+               *ngIf="createContractForm.controls.customer.hasError('required')
+               && createContractForm.controls.customer.touched">Không được để trống</p>
           </td>
         </tr>
         <tr>
           <th>Service</th>
           <td>
-            <select class="form-control">
-              <option value="">Villa Beach Front</option>
-              <option value="">House Princess 01</option>
-              <option value="">House Princess 02</option>
-              <option value="">Villa No Beach Front</option>
+            <select formControlName="service" class="form-control">
+              <option value="Villa Beach Front">Villa Beach Front</option>
+              <option value="House Princess 01">House Princess 01</option>
+              <option value="House Princess 02">House Princess 02</option>
+              <option value="Villa No Beach Front">Villa No Beach Front</option>
             </select>
+          </td>
+          <td>
+            <p style="color: red"
+               *ngIf="createContractForm.controls.service.hasError('required')
+               && createContractForm.controls.service.touched">Không được để trống</p>
           </td>
         </tr>
         <td></td>

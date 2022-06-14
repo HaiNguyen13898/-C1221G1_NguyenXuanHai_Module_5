@@ -9,6 +9,7 @@ import {ListFacilityComponent} from "./facility/list-facility/list-facility.comp
 import {ListContractComponent} from "./contract/list-contract/list-contract.component";
 import {UpdateCustomerComponent} from "./customer/update-customer/update-customer.component";
 import {UpdateFacilityComponent} from "./facility/update-facility/update-facility.component";
+import {CommonModule} from "@angular/common";
 
 
 const routes: Routes = [
@@ -25,7 +26,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [CommonModule, RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

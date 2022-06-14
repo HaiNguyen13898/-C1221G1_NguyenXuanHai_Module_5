@@ -1,62 +1,100 @@
+<h3 style="text-align: center">Create customer</h3>
+<div class="table">
+  <form [formGroup]="createCustomerForm" (ngSubmit)="createCustomer()">
+    <fieldset>
+      <legend style="text-align: center">Customer Information</legend>
+      <table class="center">
+        <tr>
+          <th>Name</th>
+          <td><input formControlName="name" class="form-control" type="text"></td>
+          <td>
+            <p style="color: red"
+               *ngIf="createCustomerForm.controls.name.hasError('required')
+               && createCustomerForm.controls.name.dirty">Không được để trống</p>
+          </td>
+        </tr>
+        <tr>
+          <th>Code Customer</th>
+          <td><input formControlName="codeCustomer" class="form-control" type="text"></td>
+          <td>
+            <p style="color: red"
+               *ngIf="createCustomerForm.controls.codeCustomer.hasError('pattern')
+               && createCustomerForm.controls.codeCustomer.dirty">Mã KH không hợp lệ (KH-XXXX)</p>
+          </td>
+        </tr>
+        <tr>
+          <th>Date of birth</th>
+          <td><input formControlName="dateBirth" class="form-control" type="date"></td>
+          <td>
+            <p style="color: red"
+               *ngIf="createCustomerForm.controls.dateBirth.hasError('required')
+               && createCustomerForm.controls.dateBirth.dirty">Không được để trống</p>
+          </td>
+        </tr>
+        <tr>
+          <th>Gender</th>
+          <td>
+            <select formControlName="gender" class="form-control">
+              <option  value="Nam">Nam</option>
+              <option  value="Nữ">Nữ</option>
+              <option  value="Gay">Gay</option>
+            </select>
+          </td>
+          <td>
+            <p style="color: red"
+               *ngIf="createCustomerForm.controls.gender.hasError('required')
+               && createCustomerForm.controls.gender.dirty">Không được để trống</p>
+          </td>
+        </tr>
+        <tr>
+          <th>Id card</th>
+          <td><input formControlName="idCard" class="form-control" type="text"></td>
+          <td>
+            <p style="color: red"
+               *ngIf="createCustomerForm.controls.idCard.hasError('pattern')
+               && createCustomerForm.controls.idCard.dirty">Sai định dạnh (Nhập 9 số, không được nhập chữ)</p>
+          </td>
+        </tr>
+        <tr>
+          <th>Phone number</th>
+          <td><input formControlName="phone" class="form-control" type="text"></td>
+          <td>
+            <p style="color: red"
+               *ngIf="createCustomerForm.controls.phone.hasError('pattern')
+               && createCustomerForm.controls.phone.dirty">Sai định dạnh (Nhập 9-10 số, không được nhập chữ)</p>
+          </td>
+        </tr>
+        <tr>
+          <th>Email</th>
+          <td><input formControlName="email" class="form-control" type="text"></td>
+          <td>
+            <p style="color: red"
+               *ngIf="createCustomerForm.controls.email.hasError('pattern')
+               && createCustomerForm.controls.email.dirty">Sai định dạnh (hai@gmail.com)</p>
+          </td>
+        </tr>
+        <tr>
+          <th>Address</th>
+          <td><input formControlName="address" class="form-control" type="text"></td>
 
-  <h3 style="text-align: center">Create customer</h3>
-    <div class="table">
-      <form action="@{/customers/save}" method="post">
-        <fieldset>
-          <legend style="text-align: center">Customer Information</legend>
-          <table class="center">
-            <tr>
-              <th>Name</th>
-              <td><input class="form-control" type="text"></td>
-            </tr>
-            <tr>
-              <th>Date of birth</th>
-              <td><input class="form-control" type="date"></td>
-
-            </tr>
-            <tr>
-              <th>Gender</th>
-              <td>
-                <select class="form-control">
-                  <option value="Nam">Nam</option>
-                  <option value="Nữ">Nữ</option>
-                  <option value="Gay">Gay</option>
-                </select>
-              </td>
-            </tr>
-            <tr>
-              <th>Id card</th>
-              <td><input class="form-control" type="text"></td>
-            </tr>
-            <tr>
-              <th>Phone number</th>
-              <td><input class="form-control" type="text"></td>
-            </tr>
-            <tr>
-              <th>Email</th>
-              <td><input class="form-control" type="text"></td>
-            </tr>
-            <tr>
-              <th>Address</th>
-              <td><input class="form-control" type="text"></td>
-            </tr>
-            <tr>
-              <th>Customer Type</th>
-              <td>
-                <select class="form-control">
-                  <option value="">Diamond</option>
-                  <option value="">Gold</option>
-                  <option value="">Silver</option>
-                  <option value="">Member</option>
-                </select>
-              </td>
-            </tr>
-            <td></td>
-            <td>
-              <button class="btn btn-primary" type="submit">Submit</button>
-            </td>
-          </table>
-        </fieldset>
-      </form>
-    </div>
+        </tr>
+        <tr>
+          <th>Customer Type</th>
+          <td>
+            <select formControlName="cusType" class="form-control">
+              <option value="Diamond">Diamond</option>
+              <option value="Gold">Gold</option>
+              <option value="Silver">Silver</option>
+              <option value="Member">Member</option>
+            </select>
+          </td>
+        </tr>
+        <td></td>
+        <td>
+          <button class="btn btn-primary" type="submit">Submit</button>
+        </td>
+      </table>
+    </fieldset>
+  </form>
+</div>
 

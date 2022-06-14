@@ -7,7 +7,7 @@
         class="fa-solid fa-circle-plus"></i>
         Create Contract</a>
 
-      <form action="/customers" class="form-inline">
+      <div action="/customers" class="form-inline">
         <input class="form-control-lg border-primary" style="margin: 5px" type="date" name="name"
                placeholder="Search name"
                aria-label="Search">
@@ -17,7 +17,7 @@
                aria-label="Search">
 
         <a class="btn btn-lg btn-outline-dark" type="submit" href=""><i class="fa-solid fa-magnifying-glass"></i>Search</a>
-      </form>
+      </div>
     </nav>
 
 
@@ -29,16 +29,18 @@
           <th scope="col">Contract date</th>
           <th scope="col">Contract end date</th>
           <th scope="col">Deposit</th>
-<!--          <th scope="col">Customer</th>-->
-<!--          <th scope="col">Service</th>-->
+          <th scope="col">Customer</th>
+          <th scope="col">Service</th>
         </tr>
         </thead>
         <tbody>
         <tr *ngFor="let contract of contracts">
-          <td>{{contract.icContract}}</td>
+          <td>{{contract.idContract}}</td>
           <td>{{contract.startDateContract}}</td>
           <td >{{contract.endDateContract}}</td>
           <td>{{contract.deposit}}</td>
+          <td>{{contract.customer.nameCustomer}}</td>
+          <td>{{contract.service.serviceName}}</td>
         </tr>
 <!--        <tr>-->
 <!--          <th scope="row">2</th>-->

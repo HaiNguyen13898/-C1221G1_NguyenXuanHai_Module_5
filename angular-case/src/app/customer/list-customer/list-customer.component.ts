@@ -13,6 +13,7 @@ export class ListCustomerComponent implements OnInit {
   constructor() {
     this.customers.push({
       idCustomer: 1,
+      codeCustomer: 'KH-0000',
       nameCustomer: 'Nguyễn Xuân Tùng',
       dateBirth: '2022-05-12',
       gender: 'Nam',
@@ -24,6 +25,7 @@ export class ListCustomerComponent implements OnInit {
     })
     this.customers.push({
       idCustomer: 2,
+      codeCustomer: 'KH-0001',
       nameCustomer: 'Phạm Xuân Diệu',
       dateBirth: '1992-08-08',
       gender: 'Nam',
@@ -35,6 +37,7 @@ export class ListCustomerComponent implements OnInit {
     })
     this.customers.push({
       idCustomer: 3,
+      codeCustomer: 'KH-0002',
       nameCustomer: 'Trương Đình Nghệ',
       dateBirth: '1990-02-27',
       gender: 'Nam',
@@ -46,6 +49,7 @@ export class ListCustomerComponent implements OnInit {
     })
     this.customers.push({
       idCustomer: 4,
+      codeCustomer: 'KH-0003',
       nameCustomer: 'Dương Văn Quan',
       dateBirth: '1981-07-08',
       gender: 'Nam',
@@ -64,4 +68,6 @@ export class ListCustomerComponent implements OnInit {
   deleteCustomer() {
 
   }
+
+
 }

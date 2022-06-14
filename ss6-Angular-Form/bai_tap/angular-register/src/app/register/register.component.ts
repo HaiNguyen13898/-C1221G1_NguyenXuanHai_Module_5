@@ -18,14 +18,14 @@ export class RegisterComponent implements OnInit {
       age: new FormControl('', [Validators.min(18), Validators.required, Validators.max(100)]),
       gender: new FormControl(),
       phone: new FormControl('', Validators.pattern('/^\\+84\\d{9,10}$/')),
-    }, {validator: this.MustMatch('password', 'confirmPassword')});
+    }, {validator: this.mustMatch('password', 'confirmPassword')});
   }
 
   get f() {
     return this.registerForm.controls;
   }
 
-  MustMatch(controlName: string, matchingControlName: string) {
+  mustMatch(controlName: string, matchingControlName: string) {
     return (formGroup: FormGroup) => {
       const control = formGroup.controls[controlName];
       const matchingControl = formGroup.controls[matchingControlName];
