@@ -18,11 +18,6 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    ListContractComponent,
-    CreateContractComponent,
-    ListFacilityComponent,
-    CreateFacilityComponent,
-    UpdateFacilityComponent,
     HomeComponent
   ],
   imports: [

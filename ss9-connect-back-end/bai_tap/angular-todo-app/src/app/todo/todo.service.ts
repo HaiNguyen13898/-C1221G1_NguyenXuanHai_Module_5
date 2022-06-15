@@ -15,22 +15,22 @@ export class TodoService {
   }
 
   getAll(): Observable<Todo[]> {
-    return this.http.get<Todo[]>(API_URL + '/todo');
+    return this.http.get<Todo[]>(API_URL + '/todos');
   }
 
   saveCategory(todo): Observable<Todo> {
-    return this.http.post<Todo>(API_URL + '/todo', todo);
+    return this.http.post<Todo>(API_URL + '/todos', todo);
   }
 
   findById(id: number): Observable<Todo> {
-    return this.http.get<Todo>(`${API_URL}/todo/${id}`);
+    return this.http.get<Todo>(`${API_URL}/todos/${id}`);
   }
 
   updateTodo(id: number, category: Todo): Observable<Todo> {
-    return this.http.put<Todo>(`${API_URL}/todo/${id}`, category);
+    return this.http.put<Todo>(`${API_URL}/todos/${id}`, category);
   }
 
   deleteTodo(id: number): Observable<Todo> {
-    return this.http.delete<Todo>(`${API_URL}/todo/${id}`);
+    return this.http.delete<Todo>(`${API_URL}/todos/${id}`);
   }
 }
