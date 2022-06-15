@@ -1,24 +1,27 @@
 
   <h3 style="text-align: center">Edit customer</h3>
   <div class="table">
-    <form >
+    <form [formGroup]="customerForm" (ngSubmit)="updateCustomer()">
       <fieldset>
         <legend style="text-align: center">Customer Information</legend>
         <table class="center">
           <tr>
             <th>Name</th>
-            <td><input class="form-control" type="text" value="Nguyễn Xuân Tùng"></td>
-
+            <td><input formControlName="nameCustomer" class="form-control" type="text" ></td>
+          </tr>
+          <tr>
+            <th>Code customer</th>
+            <td><input formControlName="codeCustomer" class="form-control" type="text" ></td>
           </tr>
           <tr>
             <th>Date of birth</th>
-            <td><input class="form-control" type="date" value="2022-05-12"></td>
+            <td><input class="form-control" type="date" formControlName="dateBirth"></td>
 
           </tr>
           <tr>
             <th>Gender</th>
             <td>
-              <select class="form-control">
+              <select formControlName="gender" class="form-control">
                 <option value="Nam">Nam</option>
                 <option value="Nữ">Nữ</option>
                 <option value="Gay">Gay</option>
@@ -26,30 +29,30 @@
             </td>
           </tr>
           <tr>
-            <th>Id card</th>
-            <td><input class="form-control" type="text" value="131234"></td>
+            <th>Identification</th>
+            <td><input formControlName="idCard" class="form-control" type="text" ></td>
           </tr>
           <tr>
             <th>Phone number</th>
-            <td><input class="form-control" type="text" value="092193123"></td>
+            <td><input formControlName="phone" class="form-control" type="text" ></td>
           </tr>
           <tr>
             <th>Email</th>
-            <td><input class="form-control" type="text" value="tung@gmail.com"></td>
+            <td><input formControlName="email" class="form-control" type="text"></td>
           </tr>
           <tr>
             <th>Address</th>
-            <td><input class="form-control" type="text" value="94 Lê Qunag Đạo"></td>
+            <td><input formControlName="address" class="form-control" type="text"></td>
           </tr>
           <tr>
             <th>Customer Type</th>
             <td>
-              <select class="form-control" >
-                <option value="5" selected>Platinium</option>
-                <option value="4">Silver</option>
-                <option value="3">Gold</option>
-                <option value="2">Member</option>
-                <option value="1">Diamond</option>
+              <select formControlName="cusType" class="form-control"   >
+                <option value="Platinium" >Platinium</option>
+                <option value="Silver">Silver</option>
+                <option value="Gold">Gold</option>
+                <option value="Member">Member</option>
+                <option value="Diamond">Diamond</option>
               </select>
             </td>
           </tr>

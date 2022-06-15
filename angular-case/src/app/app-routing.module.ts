@@ -15,13 +15,10 @@ import {CommonModule} from "@angular/common";
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'home'},
   {path: 'home', component: HomeComponent},
-  {path: 'customer', component: ListCustomerComponent},
   {path: 'facility', component: ListFacilityComponent},
   {path: 'contract', component: ListContractComponent},
-  {path: 'create-customer', component: CreateCustomerComponent},
   {path: 'create-contract', component: CreateContractComponent},
   {path: 'create-facility', component: CreateFacilityComponent},
-  {path: 'update-customer', component: UpdateCustomerComponent},
   {path: 'update-facility', component: UpdateFacilityComponent},
 ];
 

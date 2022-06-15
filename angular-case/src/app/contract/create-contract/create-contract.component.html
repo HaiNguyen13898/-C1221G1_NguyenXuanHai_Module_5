@@ -5,6 +5,15 @@
       <legend style="text-align: center">Form create contract</legend>
       <table class="center">
         <tr>
+          <th>ID</th>
+          <td><input formControlName="idContract" class="form-control" type="number"></td>
+          <td>
+            <p style="color: red"
+               *ngIf="createContractForm.controls.startDateContract.hasError('required')
+               && createContractForm.controls.startDateContract.touched">Không được để trống</p>
+          </td>
+        </tr>
+        <tr>
           <th>Contract start date</th>
           <td><input formControlName="startDateContract" class="form-control" type="date"></td>
           <td>
@@ -38,10 +47,7 @@
           <th>Customer</th>
           <td >
             <select formControlName="customer" class="form-control">
-              <option value="Nguyễn Xuân Tùng">Nguyễn Xuân Tùng</option>
-              <option value="Nguyễn Thị Hào">Nguyễn Thị Hào</option>
-              <option value="Phạm Xuân Diệu">Phạm Xuân Diệu</option>
-              <option value="Trương Đình NGhệ">Trương Đình NGhệ</option>
+              <option *ngFor="let c of customers" [ngValue]="c">{{c.nameCustomer}}</option>
             </select>
           </td>
           <td>

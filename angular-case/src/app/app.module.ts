@@ -5,9 +5,6 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {HeaderComponent} from './header/header.component';
 import {FooterComponent} from './footer/footer.component';
-import {ListCustomerComponent} from './customer/list-customer/list-customer.component';
-import {CreateCustomerComponent} from './customer/create-customer/create-customer.component';
-import {UpdateCustomerComponent} from './customer/update-customer/update-customer.component';
 import {ListContractComponent} from './contract/list-contract/list-contract.component';
 import {CreateContractComponent} from './contract/create-contract/create-contract.component';
 import {ListFacilityComponent} from './facility/list-facility/list-facility.component';
@@ -21,9 +18,6 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    ListCustomerComponent,
-    CreateCustomerComponent,
-    UpdateCustomerComponent,
     ListContractComponent,
     CreateContractComponent,
     ListFacilityComponent,

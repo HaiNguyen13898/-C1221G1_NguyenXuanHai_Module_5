@@ -1,5 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {CustomerService} from "../../service/customer.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-create-customer',
@@ -9,9 +11,11 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 export class CreateCustomerComponent implements OnInit {
   createCustomerForm: FormGroup;
 
-  constructor() {
+
+  constructor(private customerService: CustomerService, private router: Router) {
     this.createCustomerForm = new FormGroup({
-      name: new FormControl('', [Validators.required]),
+      nameCustomer: new FormControl('', [Validators.required]),
+      idCustomer: new FormControl('', [Validators.required]),
       codeCustomer: new FormControl('', [Validators.pattern('^KH-\\d{4}$')]),
       dateBirth: new FormControl('', [Validators.required]),
       gender: new FormControl('', [Validators.required]),
@@ -26,7 +30,14 @@ export class CreateCustomerComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  createCustomer () {
+  createCustomer() {
+    if(this.createCustomerForm.valid){
+      const customer = this.createCustomerForm.value;
+      this.customerService.saveCustomer(customer);
+      this.createCustomerForm.reset();
+      alert('Đã thêm mới thành công')
+      this.router.navigateByUrl('customer')
+    }
 
   }
 
