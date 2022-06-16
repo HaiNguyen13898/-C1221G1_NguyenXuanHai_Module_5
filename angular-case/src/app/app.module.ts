@@ -5,13 +5,11 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {HeaderComponent} from './header/header.component';
 import {FooterComponent} from './footer/footer.component';
-import {ListContractComponent} from './contract/list-contract/list-contract.component';
-import {CreateContractComponent} from './contract/create-contract/create-contract.component';
-import {ListFacilityComponent} from './facility/list-facility/list-facility.component';
-import {CreateFacilityComponent} from './facility/create-facility/create-facility.component';
-import {UpdateFacilityComponent} from './facility/update-facility/update-facility.component';
 import {HomeComponent} from './home/home.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {CustomerModule} from "./customer/customer.module";
+import {ContractModule} from "./contract/contract.module";
+import {FacilityModule} from "./facility/facility.module";
 
 @NgModule({
   declarations: [
@@ -24,7 +22,11 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    CustomerModule,
+    ContractModule,
+    FacilityModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,11 +3,11 @@
     <h3 style="text-align: center">Manage Contract </h3>
 
     <nav class="navbar  navbar-light bg-light justify-content-between">
-      <a class="btn btn-lg btn-outline-dark bg-light" [routerLink]="['/create-contract']" style="color: #0b0b0b"><i
+      <a class="btn btn-lg btn-outline-dark bg-light" [routerLink]="['/contract/create']" style="color: #0b0b0b"><i
         class="fa-solid fa-circle-plus"></i>
         Create Contract</a>
 
-      <div action="/customers" class="form-inline">
+      <div class="form-inline">
         <input class="form-control-lg border-primary" style="margin: 5px" type="date" name="name"
                placeholder="Search name"
                aria-label="Search">
@@ -42,38 +42,6 @@
           <td>{{contract.customer.nameCustomer}}</td>
           <td>{{contract.service.serviceName}}</td>
         </tr>
-<!--        <tr>-->
-<!--          <th scope="row">2</th>-->
-<!--          <td>12</td>-->
-<!--          <td>2021-03-15 00:00:00</td>-->
-<!--          <td>2021-03-17 00:00:00</td>-->
-<!--          <td>50000</td>-->
-<!--          <td>Hồ Thị Yến</td>-->
-<!--          <td>Phạm Xuân Diệu</td>-->
-<!--          <td>House Princess 01</td>-->
-
-<!--        </tr>-->
-<!--        <tr>-->
-<!--          <th scope="row">3</th>-->
-<!--          <td>13</td>-->
-<!--          <td>2021-01-14 00:00:00</td>-->
-<!--          <td>2021-01-18 00:00:00</td>-->
-<!--          <td>100000</td>-->
-<!--          <td>Nguyễn Hữu Hà</td>-->
-<!--          <td>Trương Đình Nghệ</td>-->
-<!--          <td>House Princess 02</td>-->
-
-<!--        </tr>-->
-<!--        <tr>-->
-<!--          <th scope="row">4</th>-->
-<!--          <td>18</td>-->
-<!--          <td>2021-09-02 00:00:00</td>-->
-<!--          <td>2021-09-05 00:00:00</td>-->
-<!--          <td>100000</td>-->
-<!--          <td>Nguyễn Hữu Hà</td>-->
-<!--          <td>Phạm Xuân Diệu</td>-->
-<!--          <td>Villa No Beach Front</td>-->
-<!--        </tr>-->
 
         </tbody>
       </table>

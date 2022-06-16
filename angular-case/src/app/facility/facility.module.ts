@@ -5,6 +5,7 @@ import { FacilityRoutingModule } from './facility-routing.module';
 import {ListFacilityComponent} from "./list-facility/list-facility.component";
 import {CreateFacilityComponent} from "./create-facility/create-facility.component";
 import {UpdateFacilityComponent} from "./update-facility/update-facility.component";
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import {UpdateFacilityComponent} from "./update-facility/update-facility.compone
   ],
   imports: [
     CommonModule,
-    FacilityRoutingModule
+    FacilityRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class FacilityModule { }

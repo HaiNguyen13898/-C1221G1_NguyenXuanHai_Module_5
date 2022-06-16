@@ -20,7 +20,7 @@
   <div class="container">
     <div class="row">
       <div class="col-4">
-        <a class="btn btn-lg btn-outline-dark bg-light" [routerLink]="['/create-facility']"><i
+        <a class="btn btn-lg btn-outline-dark bg-light" [routerLink]="['/facility/create']"><i
           class="fa-solid fa-circle-plus"></i> Create Service</a>
       </div>
       <div class="col-md-12">
@@ -49,97 +49,13 @@
                  <a  class="btn bg-white"  ><i class="fa-lg fa-beat fa-solid fa-trash-can" style="color: #0d95e8"></i></a>
                </span>
               <span>
-                 <a [routerLink]="['/update-facility']" class="btn bg-white" href=""><i class="fa-lg fa-beat fa-solid fa-file-pen" style="color: #1e7e34"></i></a>
+                 <a [routerLink]="['/facility/update', service.serviceId]" class="btn bg-white" href=""><i class="fa-lg fa-beat fa-solid fa-file-pen" style="color: #1e7e34"></i></a>
                </span>
             </p>
           </div>
         </div>
       </div>
-<!--      <div class="col-md-4 col-sm-6">-->
-<!--        <div id="serv_hover" class="room">-->
-<!--          <div class="room_img">-->
-<!--            <figure><img src="assets/images/room2.jpg" alt="#"/></figure>-->
-<!--          </div>-->
-<!--          <div class="bed_room">-->
-<!--            <h3>House Princess 01</h3>-->
-<!--            <p><span class="price mr-2">$14.000</span> <span class="per">per night</span></p>-->
-<!--            <ul class="list">-->
-<!--              <li><span>Max:</span>7 Persons</li>-->
-<!--              <li><span>Standard room:</span>Vip</li>-->
-<!--              <li><span>Size:</span>5000 m2</li>-->
-<!--              <li><span>Service type:</span>House</li>-->
-<!--            </ul>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      <div class="col-md-4 col-sm-6">-->
-<!--        <div id="serv_hover" class="room">-->
-<!--          <div class="room_img">-->
-<!--            <figure><img src="assets/images/room3.jpg" alt="#"/></figure>-->
-<!--          </div>-->
-<!--          <div class="bed_room">-->
-<!--            <h3>Room Twin 01</h3>-->
-<!--            <p><span class="price mr-2">$1500.00</span> <span class="per">per night</span></p>-->
-<!--            <ul class="list">-->
-<!--              <li><span>Max:</span>2 Persons</li>-->
-<!--              <li><span>Standard room:</span>Normal</li>-->
-<!--              <li><span>Size:</span>500 m2</li>-->
-<!--              <li><span>Service type:</span>Room</li>-->
-<!--            </ul>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      <div class="col-md-4 col-sm-6">-->
-<!--        <div id="serv_hover" class="room">-->
-<!--          <div class="room_img">-->
-<!--            <figure><img src="assets/images/room4.jpg" alt="#"/></figure>-->
-<!--          </div>-->
-<!--          <div class="bed_room">-->
-<!--            <h3>Villa No Beach Front</h3>-->
-<!--            <p><span class="price mr-2">$130.00</span> <span class="per">per night</span></p>-->
-<!--            <ul class="list">-->
-<!--              <li><span>Max:</span>8 Persons</li>-->
-<!--              <li><span>Standard room:</span>Normal</li>-->
-<!--              <li><span>Size:</span>9000 m2</li>-->
-<!--              <li><span>Service type:</span>Villa</li>-->
-<!--            </ul>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      <div class="col-md-4 col-sm-6">-->
-<!--        <div id="serv_hover" class="room">-->
-<!--          <div class="room_img">-->
-<!--            <figure><img src="assets/images/room5.jpg" alt="#"/></figure>-->
-<!--          </div>-->
-<!--          <div class="bed_room">-->
-<!--            <h3>Apartment</h3>-->
-<!--            <p><span class="price mr-2">$300.00</span> <span class="per">per night</span></p>-->
-<!--            <ul class="list">-->
-<!--              <li><span>Max:</span>4 Persons</li>-->
-<!--              <li><span>Standard room:</span>Vip</li>-->
-<!--              <li><span>Size:</span>2000 m2</li>-->
-<!--              <li><span>Service type:</span>House</li>-->
-<!--            </ul>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      <div class="col-md-4 col-sm-6">-->
-<!--        <div id="serv_hover" class="room">-->
-<!--          <div class="room_img">-->
-<!--            <figure><img src="assets/images/room6.jpg" alt="#"/></figure>-->
-<!--          </div>-->
-<!--          <div class="bed_room">-->
-<!--            <h3>House Princess 02</h3>-->
-<!--            <p><span class="price mr-2">$500.00</span> <span class="per">per night</span></p>-->
-<!--            <ul class="list">-->
-<!--              <li><span>Max:</span>5 Persons</li>-->
-<!--              <li><span>Standard room:</span>Normal</li>-->
-<!--              <li><span>Size:</span>1000 m2</li>-->
-<!--              <li><span>Service type:</span>House</li>-->
-<!--            </ul>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
+
     </div>
   </div>
 </div>

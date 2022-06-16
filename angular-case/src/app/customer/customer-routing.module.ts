@@ -6,9 +6,9 @@ import {UpdateCustomerComponent} from "../customer/update-customer/update-custom
 
 
 const routes: Routes = [
-  {path: 'customer', component: ListCustomerComponent},
-  {path: 'create-customer', component: CreateCustomerComponent},
-  {path: 'update-customer/:idCustomer', component: UpdateCustomerComponent}
+  {path: 'list', component: ListCustomerComponent},
+  {path: 'create', component: CreateCustomerComponent},
+  {path: 'update/:idCustomer', component: UpdateCustomerComponent}
 
 ];
 

@@ -2,7 +2,7 @@
   <div class="container">
     <h3 style="text-align: center">Manage Customer </h3>
     <nav class="navbar  navbar-light bg-light justify-content-between">
-      <a class="btn btn-lg btn-outline-dark bg-light" [routerLink]="['/create-customer']" style="color: #0b0b0b"><i
+      <a class="btn btn-lg btn-outline-dark bg-light" [routerLink]="['/customer/create']" style="color: #0b0b0b"><i
         class="fa-solid fa-circle-plus"></i> Create customer</a>
 
       <form class="form-inline">
@@ -62,7 +62,7 @@
 <!--              Detail</a>-->
 <!--          </td>-->
           <td>
-            <a [routerLink]="['/update-customer',customer.idCustomer]" class="btn btn-lg bg-light"><i class="fa-xl fa-solid fa-user-pen" style="color: #7c1212"></i></a>
+            <a [routerLink]="['/customer/update',customer.idCustomer]" class="btn btn-lg bg-light"><i class="fa-xl fa-solid fa-user-pen" style="color: #7c1212"></i></a>
           </td>
           <td>
             <a class="btn btn-lg bg-light" data-toggle="modal" data-target="#deleteModal" (click)="inforCustomer(customer.idCustomer, customer.nameCustomer)" >
@@ -87,7 +87,7 @@
             <p>Name: {{nameDel}}</p>
           </div>
           <div class="modal-footer">
-            <button (click)="deleteCustomer(idDel)" type="submit" class="btn btn-primary">Yes</button>
+            <button (click)="deleteCustomer(idDel)" type="submit" data-dismiss="modal" class="btn btn-primary">Yes</button>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
           </div>
         </div>
