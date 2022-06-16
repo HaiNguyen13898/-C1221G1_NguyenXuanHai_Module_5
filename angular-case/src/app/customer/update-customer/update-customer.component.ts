@@ -17,35 +17,36 @@ export class UpdateCustomerComponent implements OnInit {
               private activatedRoute: ActivatedRoute,
               private router: Router) {
     this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
-      const customer = this.customerService.findById(Number(paramMap.get('idCustomer')));
-      this.customerForm = new FormGroup({
-        nameCustomer: new FormControl(customer.nameCustomer),
-        idCustomer: new FormControl(customer.idCustomer),
-        codeCustomer: new FormControl(customer.codeCustomer),
-        dateBirth: new FormControl(customer.dateBirth),
-        gender: new FormControl(customer.gender),
-        idCard: new FormControl(customer.idCard),
-        phone: new FormControl(customer.phone),
-        email: new FormControl(customer.email),
-        address: new FormControl(customer.address),
-        cusType: new FormControl(customer.cusType),
-      })
+      this.id = +paramMap.get('id')
+      this.customerService.findById(this.id).subscribe(customer => {
+        this.customerForm = new FormGroup({
+          nameCustomer: new FormControl(customer.nameCustomer),
+          id: new FormControl(customer.id),
+          codeCustomer: new FormControl(customer.codeCustomer),
+          dateBirth: new FormControl(customer.dateBirth),
+          gender: new FormControl(customer.gender),
+          idCard: new FormControl(customer.idCard),
+          phone: new FormControl(customer.phone),
+          email: new FormControl(customer.email),
+          address: new FormControl(customer.address),
+          cusType: new FormControl(customer.cusType),
+
+        })
+      });
+
     })
   }
 
   ngOnInit(): void {
-
   }
 
-  // private getCustomer(id: number) {
-  //  return  this.customerService.findById(id);
-  // }
 
-  updateCustomer() {
+  updateCustomer(id: number) {
     const customer = this.customerForm.value;
-    this.customerService.updateCustomer( customer);
-    alert('Cập nhật thành công');
-    this.router.navigateByUrl('customer')
+    this.customerService.updateCustomer(id,customer).subscribe(()=> {
+      alert('Cập nhật thành công');
+      this.router.navigateByUrl('/customer/list')
+    });
     console.log(customer)
   }
 

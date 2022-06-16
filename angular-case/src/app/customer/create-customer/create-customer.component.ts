@@ -14,8 +14,8 @@ export class CreateCustomerComponent implements OnInit {
 
   constructor(private customerService: CustomerService, private router: Router) {
     this.createCustomerForm = new FormGroup({
+      id: new FormControl(),
       nameCustomer: new FormControl('', [Validators.required]),
-      idCustomer: new FormControl('', [Validators.required]),
       codeCustomer: new FormControl('', [Validators.pattern('^KH-\\d{4}$')]),
       dateBirth: new FormControl('', [Validators.required]),
       gender: new FormControl('', [Validators.required]),
@@ -31,14 +31,25 @@ export class CreateCustomerComponent implements OnInit {
   }
 
   createCustomer() {
-    if(this.createCustomerForm.valid){
+    if(this.createCustomerForm.valid) {
       const customer = this.createCustomerForm.value;
-      this.customerService.saveCustomer(customer);
-      this.createCustomerForm.reset();
-      alert('Đã thêm mới thành công')
-      this.router.navigateByUrl('customer')
+      this.customerService.saveCustomer(customer).subscribe(() => {
+        this.createCustomerForm.reset();
+        this.router.navigateByUrl('customer/list');
+        alert('Tạo mới thành công')
+      })
     }
-
   }
 
+
+  // if(this.createCustomerForm.valid){
+  //   const customer = this.createCustomerForm.value;
+  //   this.customerService.saveCustomer(customer);
+  //   this.createCustomerForm.reset();
+  //   alert('Đã thêm mới thành công')
+  //   this.router.navigateByUrl('customer')
+  // }
+
 }
+
+

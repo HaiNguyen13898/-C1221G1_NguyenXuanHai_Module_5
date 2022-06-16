@@ -22,20 +22,25 @@ export class ListCustomerComponent implements OnInit {
   }
 
   listCustomer() {
-    this.customers = this.customerService.getAll()
+    this.customerService.getAll().subscribe(customers => {
+      this.customers = customers;
+    })
   }
 
 
   inforCustomer(id: number, name: string) {
-     this.idDel= id;
-     this.nameDel= name;
+    this.idDel = id;
+    this.nameDel = name;
   }
 
   deleteCustomer(id: number) {
-    for (let i = 0; i < this.customers.length; i++) {
-      if(this.customers[i].idCustomer == id) {
-        this.customers.splice(i, 1)
-      }
-    }
+    // for (let i = 0; i < this.customers.length; i++) {
+    //   if (this.customers[i].id == id) {
+    //     this.customers.splice(i, 1)
+    //   }
+    // }
+    this.customerService.deleteCustomer(id).subscribe(() => {
+      this.ngOnInit()
+    })
   }
 }

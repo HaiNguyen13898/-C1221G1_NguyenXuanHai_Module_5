@@ -2,7 +2,7 @@ import {Customer} from "./customer";
 import {Facility} from "./facility";
 
 export interface Contract {
-  idContract: number;
+  id: number;
   startDateContract: string;
   endDateContract: string;
   deposit: number;

@@ -6,6 +6,7 @@ import {ListCustomerComponent} from "../customer/list-customer/list-customer.com
 import {CreateCustomerComponent} from "../customer/create-customer/create-customer.component";
 import {UpdateCustomerComponent} from "../customer/update-customer/update-customer.component";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     CommonModule,
     CustomerRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
   ]
 })
 export class CustomerModule {

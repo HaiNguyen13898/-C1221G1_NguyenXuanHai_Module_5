@@ -47,7 +47,7 @@
         </thead>
         <tbody>
         <tr *ngFor="let customer of customers">
-          <th scope="row">{{customer.idCustomer}}</th>
+          <th scope="row">{{customer.id}}</th>
           <td>{{customer.nameCustomer}}</td>
           <td>{{customer.dateBirth}}</td>
           <td>{{customer.gender}}</td>
@@ -62,10 +62,10 @@
 <!--              Detail</a>-->
 <!--          </td>-->
           <td>
-            <a [routerLink]="['/customer/update',customer.idCustomer]" class="btn btn-lg bg-light"><i class="fa-xl fa-solid fa-user-pen" style="color: #7c1212"></i></a>
+            <a [routerLink]="['/customer/update',customer.id]" class="btn btn-lg bg-light"><i class="fa-xl fa-solid fa-user-pen" style="color: #7c1212"></i></a>
           </td>
           <td>
-            <a class="btn btn-lg bg-light" data-toggle="modal" data-target="#deleteModal" (click)="inforCustomer(customer.idCustomer, customer.nameCustomer)" >
+            <a class="btn btn-lg bg-light" data-toggle="modal" data-target="#deleteModal" (click)="inforCustomer(customer.id, customer.nameCustomer)" >
               <i class="fa-xl fa-solid fa-user-slash" style="color: #7c1212"></i></a>
           </td>
         </tr>

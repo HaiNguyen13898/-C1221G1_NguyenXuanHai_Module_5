@@ -8,7 +8,7 @@ import {UpdateCustomerComponent} from "../customer/update-customer/update-custom
 const routes: Routes = [
   {path: 'list', component: ListCustomerComponent},
   {path: 'create', component: CreateCustomerComponent},
-  {path: 'update/:idCustomer', component: UpdateCustomerComponent}
+  {path: 'update/:id', component: UpdateCustomerComponent}
 
 ];
 

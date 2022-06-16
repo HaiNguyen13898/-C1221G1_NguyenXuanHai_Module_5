@@ -1,7 +1,7 @@
 
   <h3 style="text-align: center">Edit customer</h3>
   <div class="table">
-    <form [formGroup]="customerForm" (ngSubmit)="updateCustomer()">
+    <form [formGroup]="customerForm" (ngSubmit)="updateCustomer(id)" >
       <fieldset>
         <legend style="text-align: center">Customer Information</legend>
         <table class="center">
