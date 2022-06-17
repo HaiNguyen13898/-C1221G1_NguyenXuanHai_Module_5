@@ -99,10 +99,7 @@
           <th>Customer Type</th>
           <td>
             <select formControlName="cusType" class="form-control">
-              <option value="Diamond">Diamond</option>
-              <option value="Gold">Gold</option>
-              <option value="Silver">Silver</option>
-              <option value="Member">Member</option>
+              <option *ngFor="let cusType of customerType" [ngValue]="cusType" >{{cusType.CustomerTypeName}}</option>
             </select>
           </td>
         </tr>

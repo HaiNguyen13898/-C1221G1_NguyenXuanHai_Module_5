@@ -7,7 +7,7 @@
         <tr>
           <th>Name</th>
           <td>
-            <select formControlName="name" class="form-control">
+            <select formControlName="serviceName" class="form-control">
               <option value="Villa No Beach Front">Villa No Beach Front</option>
               <option value="Villa Beach Front">Villa Beach Front</option>
               <option value="Room Twin 02">Room Twin 02</option>
@@ -18,8 +18,8 @@
           </td>
           <td>
             <p style="color: red"
-               *ngIf="createServiceForm.controls.name.hasError('required')
-               && createServiceForm.controls.name.touched">Không được để trống</p>
+               *ngIf="createServiceForm.controls.serviceName.hasError('required')
+               && createServiceForm.controls.serviceName.touched">Không được để trống</p>
           </td>
         </tr>
         <tr>
@@ -54,8 +54,8 @@
           <th>Standard room</th>
           <td>
             <select formControlName="standardRoom" class="form-control">
-              <option value="">Vip</option>
-              <option value="">Normal</option>
+              <option value="Vip">Vip</option>
+              <option value="Normal">Normal</option>
             </select>
           </td>
           <td>
@@ -100,10 +100,10 @@
           <th>Rent type</th>
           <td>
             <select formControlName="rentType" class="form-control">
-              <option value="">Year</option>
-              <option value="">Month</option>
-              <option value="">Day</option>
-              <option value="">Hour</option>
+              <option value="Year">Year</option>
+              <option value="Month">Month</option>
+              <option value="Day">Day</option>
+              <option value="Hour">Hour</option>
             </select>
           </td>
           <td>
@@ -115,7 +115,7 @@
         <tr>
           <th>Service type</th>
           <td>
-            <select formControlName="serviceType" class="form-control">
+            <select formControlName="svType" class="form-control">
               <option value="Villa">Villa</option>
               <option value="House">House</option>
               <option value="Room">Room</option>

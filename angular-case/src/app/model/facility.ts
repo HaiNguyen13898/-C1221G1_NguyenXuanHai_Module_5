@@ -1,5 +1,5 @@
 export interface Facility {
-  serviceId: number;
+  id: number;
   serviceName: string;
   serviceArea: number;
   serviceCost: number;

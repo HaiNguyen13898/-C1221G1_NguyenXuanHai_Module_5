@@ -32,6 +32,11 @@
   font-size: 13px;
 }
 
+ul.ngx-pagination {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .center {
   margin-left: auto;
   margin-right: auto;

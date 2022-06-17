@@ -10,7 +10,7 @@ const API_URL = `${environment.apiUrl}`;
   providedIn: 'root'
 })
 export class CustomerService {
-  customers: Customer[] = [];
+  // customers: Customer[] = [];
 
   constructor(private http: HttpClient) {
     // this.customers.push({
@@ -105,5 +105,8 @@ export class CustomerService {
 
   deleteCustomer(id: number): Observable<Customer> {
     return this.http.delete<Customer>(`${API_URL}/customers/${id}`);
+  }
+  searchCustomer(name: string, code: string): Observable<Customer> {
+    return this.http.get<Customer>(`${API_URL}/customers?name_like=${name}&codeCustomer_like=${code}`)
   }
 }

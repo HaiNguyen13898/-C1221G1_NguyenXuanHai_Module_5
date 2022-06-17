@@ -3,15 +3,18 @@ import {Contract} from "../model/contract";
 import {Observable} from "rxjs";
 import {Customer} from "../model/customer";
 import {environment} from "../../environments/environment";
-import {HttpClientModule} from "@angular/common/http";
+import {HttpClient} from "@angular/common/http";
+
 const API_URL = `${environment.apiUrl}`;
+
 @Injectable({
   providedIn: 'root'
 })
 export class ContractService {
-  contracts: Contract [] = [];
+  // contracts: Contract [] = [];
 
-  constructor(private http: HttpClientModule) {
+  constructor(private http: HttpClient) {
+
     // this.contracts.push({
     //   idContract: 1,
     //   startDateContract: '2020-07-14',
@@ -146,24 +149,23 @@ export class ContractService {
   //   this.contracts.push(contract)
   // }
 
-
-  getAll(): Observable<Customer[]> {
-    return this.http.get<Customer[]>(API_URL + '/customers');
+  getAll(): Observable<Contract[]> {
+    return this.http.get<Contract[]>(API_URL + '/contracts');
   }
 
-  saveCustomer(customer): Observable<Customer> {
-    return this.http.post<Customer>(API_URL + '/customers', customer);
+  saveContract(contract): Observable<Contract> {
+    return this.http.post<Contract>(API_URL + '/contracts', contract);
   }
 
-  findById(id: number): Observable<Customer> {
-    return this.http.get<Customer>(`${API_URL}/customers/${id}`);
+  findById(id: number): Observable<Contract> {
+    return this.http.get<Contract>(`${API_URL}/contracts/${id}`);
   }
 
-  updateCustomer(id: number, customer: Customer): Observable<Customer> {
-    return this.http.put<Customer>(`${API_URL}/customers/${id}`, customer);
+  updateContract(id: number, contract: Contract): Observable<Contract> {
+    return this.http.put<Contract>(`${API_URL}/contracts/${id}`, contract);
   }
 
-  deleteCustomer(id: number): Observable<Customer> {
-    return this.http.delete<Customer>(`${API_URL}/customers/${id}`);
+  deleteContract(id: number): Observable<Contract> {
+    return this.http.delete<Contract>(`${API_URL}/customers/${id}`);
   }
 }

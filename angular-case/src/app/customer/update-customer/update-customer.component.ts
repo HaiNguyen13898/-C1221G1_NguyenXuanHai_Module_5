@@ -3,6 +3,8 @@ import {Customer} from "../../model/customer";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {CustomerService} from "../../service/customer.service";
 import {ActivatedRoute, ParamMap, Router} from "@angular/router";
+import {CustomerType} from "../../model/customer-type";
+import {CustomerTypeService} from "../../service/customer-type.service";
 
 @Component({
   selector: 'app-update-customer',
@@ -11,10 +13,16 @@ import {ActivatedRoute, ParamMap, Router} from "@angular/router";
 })
 export class UpdateCustomerComponent implements OnInit {
   customerForm: FormGroup;
+  customerType: CustomerType [] = [];
   id: number;
+
+  equals (item1, item2) {
+    return item1 && item2 && item1.id === item2.id;
+  };
 
   constructor(private customerService: CustomerService,
               private activatedRoute: ActivatedRoute,
+              private customerTypeService: CustomerTypeService,
               private router: Router) {
     this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
       this.id = +paramMap.get('id')
@@ -30,7 +38,6 @@ export class UpdateCustomerComponent implements OnInit {
           email: new FormControl(customer.email),
           address: new FormControl(customer.address),
           cusType: new FormControl(customer.cusType),
-
         })
       });
 
@@ -38,6 +45,9 @@ export class UpdateCustomerComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.customerTypeService.getAll().subscribe(customerType => {
+      this.customerType = customerType;
+    })
   }
 
 

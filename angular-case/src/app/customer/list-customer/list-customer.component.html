@@ -5,22 +5,22 @@
       <a class="btn btn-lg btn-outline-dark bg-light" [routerLink]="['/customer/create']" style="color: #0b0b0b"><i
         class="fa-solid fa-circle-plus"></i> Create customer</a>
 
-      <form class="form-inline">
-        <input class="form-control-lg border-primary" style="margin: 5px" type="search" name="name"
+      <form [formGroup]="searchForm" (ngSubmit)="search()" class="form-inline">
+        <input class="form-control-lg border-primary" style="margin: 5px"  type="search" formControlName="nameCustomer"
                placeholder="Search name"
                aria-label="Search">
 
-        <input class="form-control-lg border-primary" style="margin: 5px" type="search" name="address"
-               placeholder="Search address"
+        <input class="form-control-lg border-primary" style="margin: 5px" type="search" formControlName="codeCustomer"
+               placeholder="Search code customer"
                aria-label="Search">
 
-        <select class="form-control-lg " style="margin: 5px" name="customerType" class="custom-select mr-sm-2"
-                id="inlineFormCustomSelect">
-          <option value="">Customer type</option>
-          <option value="">Member</option>
-          <option value="">Diamond</option>
+<!--        <select class="form-control-lg " style="margin: 5px" name="customerType" class="custom-select mr-sm-2"-->
+<!--                id="inlineFormCustomSelect">-->
+<!--          <option value="">Customer type</option>-->
+<!--          <option value="">Member</option>-->
+<!--          <option value="">Diamond</option>-->
 
-        </select>
+<!--        </select>-->
 
         <a class="btn btn-lg btn-outline-dark" type="submit" href=""><i class="fa-solid fa-magnifying-glass"></i>Search</a>
 
@@ -40,13 +40,13 @@
           <th scope="col">Email</th>
           <th scope="col">Address</th>
           <th scope="col">Customer Type</th>
-<!--          <th scope="col">Detail</th>-->
+          <!--          <th scope="col">Detail</th>-->
           <th scope="col">Edit</th>
           <th scope="col">Delete</th>
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let customer of customers">
+        <tr *ngFor="let customer of customers| paginate : { itemsPerPage: 2, currentPage: p }; index as i">
           <th scope="row">{{customer.id}}</th>
           <td>{{customer.nameCustomer}}</td>
           <td>{{customer.dateBirth}}</td>
@@ -55,17 +55,19 @@
           <td>{{customer.phone}}</td>
           <td>{{customer.email}}</td>
           <td>{{customer.address}}</td>
-          <td>{{customer.cusType}}</td>
-<!--          <td>-->
-<!--            <a class="btn btn-lg btn-light">-->
-<!--              <i class="fa-solid fa-user" style="color: #7c1212"></i>-->
-<!--              Detail</a>-->
-<!--          </td>-->
+          <td>{{customer.cusType.CustomerTypeName}}</td>
+          <!--          <td>-->
+          <!--            <a class="btn btn-lg btn-light">-->
+          <!--              <i class="fa-solid fa-user" style="color: #7c1212"></i>-->
+          <!--              Detail</a>-->
+          <!--          </td>-->
           <td>
-            <a [routerLink]="['/customer/update',customer.id]" class="btn btn-lg bg-light"><i class="fa-xl fa-solid fa-user-pen" style="color: #7c1212"></i></a>
+            <a [routerLink]="['/customer/update',customer.id]" class="btn btn-lg bg-light"><i
+              class="fa-xl fa-solid fa-user-pen" style="color: #7c1212"></i></a>
           </td>
           <td>
-            <a class="btn btn-lg bg-light" data-toggle="modal" data-target="#deleteModal" (click)="inforCustomer(customer.id, customer.nameCustomer)" >
+            <a class="btn btn-lg bg-light" data-toggle="modal" data-target="#deleteModal"
+               (click)="inforCustomer(customer.id, customer.nameCustomer)">
               <i class="fa-xl fa-solid fa-user-slash" style="color: #7c1212"></i></a>
           </td>
         </tr>
@@ -82,12 +84,13 @@
             <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <p>Modal body text goes here.</p>
+            <p style="color: red">Delete Customer</p>
             <p>ID: {{idDel}}</p>
             <p>Name: {{nameDel}}</p>
           </div>
           <div class="modal-footer">
-            <button (click)="deleteCustomer(idDel)" type="submit" data-dismiss="modal" class="btn btn-primary">Yes</button>
+            <button (click)="deleteCustomer(idDel)" type="submit" data-dismiss="modal" class="btn btn-primary">Yes
+            </button>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
           </div>
         </div>
@@ -95,17 +98,7 @@
     </div>
 
     <nav aria-label="Page navigation example">
-      <ul class="pagination justify-content-end">
-        <li class="page-item disabled">
-          <a class="page-link" href="#" tabindex="-1">Previous</a>
-        </li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item">
-          <a class="page-link" href="#">Next</a>
-        </li>
-      </ul>
+      <pagination-controls (pageChange)="p = $event" class=" page-item"></pagination-controls>
     </nav>
   </div>
 </section>

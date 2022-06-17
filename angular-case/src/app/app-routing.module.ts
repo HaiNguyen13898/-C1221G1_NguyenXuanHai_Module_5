@@ -1,14 +1,9 @@
 import {NgModule} from '@angular/core';
-import {Routes, RouterModule} from '@angular/router';
+import {RouterModule, Routes} from '@angular/router';
 import {HomeComponent} from "./home/home.component";
 // import {CreateCustomerComponent} from "./customer/create-customer/create-customer.component";
-import {CreateContractComponent} from "./contract/create-contract/create-contract.component";
-import {CreateFacilityComponent} from "./facility/create-facility/create-facility.component";
 // import {ListCustomerComponent} from "./customer/list-customer/list-customer.component";
-import {ListFacilityComponent} from "./facility/list-facility/list-facility.component";
-import {ListContractComponent} from "./contract/list-contract/list-contract.component";
 // import {UpdateCustomerComponent} from "./customer/update-customer/update-customer.component";
-import {UpdateFacilityComponent} from "./facility/update-facility/update-facility.component";
 import {CommonModule} from "@angular/common";
 
 

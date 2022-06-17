@@ -6,6 +6,7 @@ import {ListFacilityComponent} from "./list-facility/list-facility.component";
 import {CreateFacilityComponent} from "./create-facility/create-facility.component";
 import {UpdateFacilityComponent} from "./update-facility/update-facility.component";
 import {ReactiveFormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import {ReactiveFormsModule} from "@angular/forms";
   imports: [
     CommonModule,
     FacilityRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
   ]
 })
 export class FacilityModule { }

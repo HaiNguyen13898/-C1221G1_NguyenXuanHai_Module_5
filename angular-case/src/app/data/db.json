@@ -9,23 +9,62 @@
       "idCard": "131234",
       "phone": "092193123",
       "email": "tung@gmail.com",
-      "address": "94 Lê Qunag Đạo",
-      "cusType": "Platinium"
+      "address": "94 Lê Quang Đạo",
+      "cusType": {
+        "id": 1,
+        "CustomerTypeName": "Diamond"
+      }
+    },
+    {
+      "nameCustomer": "Nguyễn Thanh Tùng",
+      "id": 2,
+      "codeCustomer": "KH-2222",
+      "dateBirth": "2000-07-14",
+      "gender": "Nam",
+      "idCard": "123456789",
+      "phone": "0778631234",
+      "email": "tung@gmail.com",
+      "address": "Quy Nhơn",
+      "cusType": {
+        "id": 3,
+        "CustomerTypeName": "Silver"
+      }
     },
     {
       "id": 3,
-      "codeCustomer": "KH-0002",
-      "nameCustomer": "Trương Đình Nghệ",
-      "dateBirth": "1990-02-27",
-      "gender": "Nam",
-      "idCard": "488645199",
-      "phone": "0373213122",
-      "email": "nghenhan2702@gmail.com",
-      "address": "K323/12 Ông Ích Khiêm, Vinh",
-      "cusType": "Diamond"
+      "nameCustomer": "Nguyễn Trãi",
+      "codeCustomer": "KH-9812",
+      "dateBirth": "1997-11-14",
+      "gender": "Nữ",
+      "idCard": "644231233",
+      "phone": "0901234567",
+      "email": "trai@gmail.com",
+      "address": "Hà Nội",
+      "cusType": {
+        "id": 2,
+        "CustomerTypeName": "Gold"
+      }
     }
   ],
-  "contract": [
+  "customerTypes": [
+    {
+      "id": 1,
+      "CustomerTypeName": "Diamond"
+    },
+    {
+      "id": 2,
+      "CustomerTypeName": "Gold"
+    },
+    {
+      "id": 3,
+      "CustomerTypeName": "Silver"
+    },
+    {
+      "id": 4,
+      "CustomerTypeName": "Member"
+    }
+  ],
+  "contracts": [
     {
       "id": 1,
       "startDateContract": "2020-07-14",
@@ -42,8 +81,79 @@
         "email": "duongquan@gmail.com",
         "address": "K453/12 Lê Lợi, Đà Nẵng",
         "cusType": "Diamond"
+      },
+      "service": {
+        "id": 4,
+        "serviceName": "Room Twin 01",
+        "serviceArea": 1100,
+        "serviceCost": 12300,
+        "maxPeople": 100,
+        "standardRoom": "normal",
+        "descriptionOtherConvenience": "dọn phòng free",
+        "poolArea": 10,
+        "numberFloor": 2,
+        "rentType": "day",
+        "svType": "room"
+      }
+    },
+    {
+      "id": 2,
+      "startDateContract": "2022-06-10",
+      "endDateContract": "2022-06-17",
+      "deposit": "100000",
+      "customer": {
+        "nameCustomer": "Nguyễn Xuân Hoàng",
+        "id": 1,
+        "codeCustomer": "KH-0000",
+        "dateBirth": "2022-05-12",
+        "gender": "Nam",
+        "idCard": "131234",
+        "phone": "092193123",
+        "email": "tung@gmail.com",
+        "address": "94 Lê Quang Đạo",
+        "cusType": "Platinium"
+      },
+      "service": {
+        "id": 2,
+        "serviceName": "Villa Beach Front",
+        "serviceArea": 2000,
+        "serviceCost": 32321,
+        "maxPeople": 10,
+        "standardRoom": "vip",
+        "descriptionOtherConvenience": "dọn phòng free",
+        "poolArea": 100,
+        "numberFloor": 20,
+        "rentType": "day",
+        "svType": "villa"
       }
     }
-
+  ],
+  "facilities": [
+    {
+      "id": 8,
+      "serviceName": "Villa Beach Front",
+      "serviceArea": "100",
+      "serviceCost": "90000000",
+      "maxPeople": "3",
+      "standardRoom": "Normal",
+      "descriptionOtherConvenience": "Có bếp",
+      "poolArea": "30",
+      "numberFloor": "13",
+      "rentType": "Hour",
+      "svType": "Villa"
+    },
+    {
+      "id": 9,
+      "serviceName": "House Princess 02",
+      "serviceArea": "30",
+      "serviceCost": "5000000",
+      "maxPeople": "3",
+      "standardRoom": "Vip",
+      "descriptionOtherConvenience": "Có điều hoà",
+      "poolArea": "30",
+      "numberFloor": "2",
+      "rentType": "Month",
+      "svType": "Room"
+    }
   ]
 }

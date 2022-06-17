@@ -21,6 +21,8 @@ export class ListContractComponent implements OnInit {
   }
 
   listContract() {
-   this.contracts = this.contractService.getAll();
+   this.contractService.getAll().subscribe(contracts => {
+     this.contracts = contracts
+   });
   }
 }
