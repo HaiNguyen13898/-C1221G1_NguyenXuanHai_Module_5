@@ -40,7 +40,6 @@ export class UpdateCustomerComponent implements OnInit {
           cusType: new FormControl(customer.cusType),
         })
       });
-
     })
   }
 

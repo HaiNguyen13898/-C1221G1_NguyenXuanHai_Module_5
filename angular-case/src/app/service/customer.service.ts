@@ -107,6 +107,6 @@ export class CustomerService {
     return this.http.delete<Customer>(`${API_URL}/customers/${id}`);
   }
   searchCustomer(name: string, code: string): Observable<Customer> {
-    return this.http.get<Customer>(`${API_URL}/customers?name_like=${name}&codeCustomer_like=${code}`)
+    return this.http.get<Customer>(`${API_URL}/customers?name_like=${name}&codeCustomer_like=${code}`);
   }
 }
