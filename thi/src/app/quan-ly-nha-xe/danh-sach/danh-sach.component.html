@@ -1,0 +1,77 @@
+<section class="section-margin section-margin--small">
+  <div class="container">
+    <h3 style="text-align: center">Danh sách xe</h3>
+    <nav class="navbar  navbar-light bg-light justify-content-between">
+      <a class="btn btn-lg btn-outline-dark bg-light" (click)="troll()"  style="color: #0b0b0b"><i
+        class="fa-solid fa-circle-plus"></i> Tạo mới</a>
+
+    </nav>
+    <div class="table-responsive-md">
+      <table class="table" border="1" style="text-align: center">
+        <thead class="thead-dark">
+        <tr>
+          <th scope="col">Số xe</th>
+          <th scope="col">Loại xe</th>
+          <th scope="col">Tên nhà xe</th>
+          <th scope="col">Điểm đi</th>
+          <th scope="col">Điểm đến</th>
+          <th scope="col">Số điện thoại</th>
+          <th scope="col">Email</th>
+          <th scope="col">Giờ đi</th>
+          <th scope="col">Giờ đến</th>
+          <th scope="col">Sửa</th>
+          <th scope="col">Xoá</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let x of nhaXe | paginate : { itemsPerPage: 3, currentPage: p }; index as i ">
+          <th scope="row">{{x.licensePlates}}</th>
+          <td>{{x.typeVehicle.nameTypeVehicle}}</td>
+          <td>{{x.carManufacturer.nameCarManufacturer}}</td>
+          <td>{{x.location2.nameLocation}}</td>
+          <td>{{x.location.nameLocation}}</td>
+          <td>{{x.phoneNumber}}</td>
+          <td>{{x.email}}</td>
+          <td>{{x.timeStart}}</td>
+          <td>{{x.timeFinish}}</td>
+          <td>
+            <a [routerLink]="['/update', x.idVehicle]" class="btn btn-lg bg-light"><i
+              class="fa-xl fa-solid fa-user-pen" style="color: #7c1212"></i></a>
+          </td>
+          <td>
+            <a class="btn btn-lg bg-light" data-toggle="modal" data-target="#deleteModal"
+               (click)="infor(x.idVehicle , x.licensePlates)">
+              <i class="fa-xl fa-solid fa-user-slash" style="color: #7c1212"></i></a>
+          </td>
+        </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+    <div id="deleteModal" class="modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Xoá thông tin xe</h5>
+            <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p style="color: red">Bạn có đồng ý xoá thông tin xe</p>
+            <p>Mã xe: {{idDel}}</p>
+            <p>Biển số xe: {{soXe}}</p>
+          </div>
+          <div class="modal-footer">
+            <button (click)="delete(idDel)"  type="submit" data-dismiss="modal" class="btn btn-primary">Xoá
+            </button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <nav  aria-label="Page navigation example">
+      <pagination-controls  (pageChange)="p = $event" class=" page-item"></pagination-controls>
+    </nav>
+  </div>
+</section>

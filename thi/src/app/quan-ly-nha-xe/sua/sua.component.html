@@ -1,0 +1,122 @@
+<h3 style="text-align: center">Sửa thông tin xe</h3>
+<div class="table">
+  <form [formGroup]="danhSachs" (ngSubmit)="update(id)">
+    <fieldset>
+      <table style="margin-left: auto; margin-right: auto">
+        <tr>
+          <th>Số xe</th>
+          <td><input style="background: red" disabled formControlName="bienSo" class="form-control" type="text"></td>
+        </tr>
+        <tr>
+          <th>Loại xe</th>
+          <td><input formControlName="loaiXe" class="form-control" type="text"></td>
+          <td>
+            <p style="color: red"
+               *ngIf="danhSachs.controls.loaiXe.hasError('required')
+               && danhSachs.controls.loaiXe.touched">Không được để trống</p>
+          </td>
+        </tr>
+        <tr>
+          <th>Tên Nhà xe</th>
+          <td><input formControlName="tenNhaXe" class="form-control" type="text"></td>
+          <td>
+            <p style="color: red"
+               *ngIf="danhSachs.controls.tenNhaXe.hasError('required')
+               && danhSachs.controls.tenNhaXe.touched">Không được để trống</p>
+          </td>
+
+        </tr>
+        <tr>
+          <th>Điểm đi</th>
+          <select formControlName="diemDi" class="form-control">
+            <option value=" ">Chọn Điểm đi</option>
+            <option value="Đà Nẵng">Đà Nẵng</option>
+            <option value="Quảng Bình">Quảng Bình</option>
+            <option value="Hà Tĩnh">Hà Tĩnh</option>
+            <option value="Quy Nhơn">Quy Nhơn</option>
+            <option value="Hà Nội">Hà Nội</option>
+            <option value="Hồ Chí Minh">Hồ Chí Minh</option>
+            <option value="Huế">Huế</option>
+          </select>
+          <td>
+            <p style="color: red"
+               *ngIf="danhSachs.controls.diemDi.hasError('required')
+               && danhSachs.controls.diemDi.touched">Không được để trống</p>
+          </td>
+        </tr>
+        <tr>
+          <th>Điểm đến</th>
+          <select formControlName="diemDen" class="form-control">
+            <option value=" ">Chọn Điểm đến</option>
+            <option value="Đà Nẵng">Đà Nẵng</option>
+            <option value="Quảng Bình">Quảng Bình</option>
+            <option value="Hà Tĩnh">Hà Tĩnh</option>
+            <option value="Quy Nhơn">Quy Nhơn</option>
+            <option value="Hà Nội">Hà Nội</option>
+            <option value="Hồ Chí Minh">Hồ Chí Minh</option>
+            <option value="Huế">Huế</option>
+          </select>
+          <td>
+            <p style="color: red"
+               *ngIf="danhSachs.controls.diemDen.hasError('required')
+               && danhSachs.controls.diemDen.touched">Không được để trống</p>
+          </td>
+        </tr>
+        <tr>
+          <th>Số điện thoại</th>
+          <td><input formControlName="sdt" class="form-control" type="text"></td>
+          <td>
+            <p style="color: red"
+               *ngIf="danhSachs.controls.sdt.hasError('required')
+               && danhSachs.controls.sdt.touched">Không được để trống</p>
+            <p style="color: red"
+               *ngIf="danhSachs.controls.sdt.hasError('pattern')
+               && danhSachs.controls.sdt.touched">Số điện thoại không hợp lệ (Đầu số 090,093,097 và có 10 số)</p>
+          </td>
+        </tr>
+        <tr>
+          <th>Email</th>
+          <td><input formControlName="email" class="form-control" type="text"></td>
+          <td>
+            <p style="color: red"
+               *ngIf="danhSachs.controls.email.hasError('required')
+               && danhSachs.controls.email.touched">Không được để trống</p>
+            <p style="color: red"
+               *ngIf="danhSachs.controls.email.hasError('pattern')
+               && danhSachs.controls.email.touched">Email không hợp lệ (VD: haideptra@gmail.com)</p>
+          </td>
+        </tr>
+        <tr>
+          <th>Giờ đi</th>
+          <td><input formControlName="gioDi" class="form-control" type="time"></td>
+          <td>
+            <p style="color: red"
+               *ngIf="danhSachs.controls.gioDi.hasError('required')
+               && danhSachs.controls.gioDi.touched">Không được để trống</p>
+
+          </td>
+        </tr>
+        <tr>
+          <th>Giờ đến</th>
+          <td><input formControlName="gioDen" class="form-control" type="time"></td>
+          <td>
+            <p style="color: red"
+               *ngIf="danhSachs.controls.gioDen.hasError('required')
+               && danhSachs.controls.gioDen.touched">Không được để trống</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a class="btn btn-dark" style="color: white" routerLink="/">Huỷ</a>
+          </td>
+          <td>
+            <button class="btn btn-primary" type="submit">Sửa</button>
+          </td>
+        </tr>
+
+      </table>
+    </fieldset>
+  </form>
+</div>
+
+
