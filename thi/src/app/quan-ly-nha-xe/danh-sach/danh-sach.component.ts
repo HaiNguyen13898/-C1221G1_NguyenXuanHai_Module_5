@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {NhaXe} from '../../model/nha-xe';
 import {NhaXeService} from '../../service/nha-xe.service';
 
@@ -8,17 +8,19 @@ import {NhaXeService} from '../../service/nha-xe.service';
   styleUrls: ['./danh-sach.component.css']
 })
 export class DanhSachComponent implements OnInit {
-nhaXe: NhaXe [] = [];
+  nhaXe: NhaXe [] = [];
 
-idDel: number;
-soXe: string;
+  idDel: number;
+  soXe: string;
   p: string | number;
 
-  constructor(private nhaXeService: NhaXeService) {}
+  constructor(private nhaXeService: NhaXeService) {
+  }
 
   ngOnInit(): void {
     this.listNhaXe();
   }
+
   listNhaXe() {
     this.nhaXeService.getAll().subscribe(nhaxes => {
       this.nhaXe = nhaxes;
@@ -32,12 +34,10 @@ soXe: string;
   }
 
   delete(idDel: number) {
-    this.nhaXeService.deleteNhaXe(idDel).subscribe(() => {
+    this.nhaXeService.delete(idDel).subscribe(() => {
       this.ngOnInit();
     });
   }
 
-  troll() {
-    alert('ĐỀ KHÔNG YÊU CẦU LÀM');
-  }
+
 }

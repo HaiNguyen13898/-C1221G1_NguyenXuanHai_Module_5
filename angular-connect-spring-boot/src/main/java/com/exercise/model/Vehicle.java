@@ -16,7 +16,7 @@ import javax.persistence.*;
 public class Vehicle {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idVehicle;
+    private int id;
     private String licensePlates;
     private String email;
     private String phoneNumber;
@@ -24,19 +24,19 @@ public class Vehicle {
     private String timeFinish;
 
     @ManyToOne
-    @JoinColumn(name = "type_vehicle", referencedColumnName = "idTypeVehicle")
+    @JoinColumn(name = "type_vehicle", referencedColumnName = "id")
     private TypeVehicle typeVehicle;
 
     @ManyToOne
-    @JoinColumn(name = "car_manufacturer", referencedColumnName = "idCarManufacturer")
+    @JoinColumn(name = "car_manufacturer", referencedColumnName = "id")
     private CarManufacturer carManufacturer;
 
     @ManyToOne
-    @JoinColumn(name = "destination", referencedColumnName = "idLocation")
+    @JoinColumn(name = "destination", referencedColumnName = "id")
     private Location location;
 
     @ManyToOne
-    @JoinColumn(name = "point_of_departure", referencedColumnName = "idLocation")
+    @JoinColumn(name = "point_of_departure", referencedColumnName = "id")
     private Location location2;
 
 

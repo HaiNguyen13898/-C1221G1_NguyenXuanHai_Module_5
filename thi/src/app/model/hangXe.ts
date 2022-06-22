@@ -1,4 +1,4 @@
 export interface HangXe {
-  idCarManufacturer?: number;
+  id?: number;
   nameCarManufacturer?: string;
 }

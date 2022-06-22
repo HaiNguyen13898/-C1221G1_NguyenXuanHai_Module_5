@@ -1,4 +1,4 @@
 export interface DiaDiem {
-  idLocation?: number;
+  id?: number;
   nameLocation?: string;
 }

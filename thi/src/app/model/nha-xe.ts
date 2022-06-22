@@ -3,7 +3,7 @@ import {HangXe} from './hangXe';
 import {DiaDiem} from './dia-diem';
 
 export interface NhaXe {
-  idVehicle?: number;
+  id?: number;
   licensePlates?: string;
   typeVehicle?: LoaiXe;
   carManufacturer?: HangXe;

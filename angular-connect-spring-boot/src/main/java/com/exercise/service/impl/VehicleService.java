@@ -19,9 +19,8 @@ public class VehicleService implements IVehicleService {
     }
 
     @Override
-    public Vehicle saveVehicle(Vehicle vehicle) {
-        vehicleRepository.save(vehicle);
-        return vehicle;
+    public Vehicle save(Vehicle vehicle) {
+      return vehicleRepository.save(vehicle);
     }
 
     @Override
@@ -30,12 +29,9 @@ public class VehicleService implements IVehicleService {
     }
 
     @Override
-    public void update(Vehicle vehicle) {
-        vehicleRepository.save(vehicle);
+    public void remove(Integer id) {
+        vehicleRepository.deleteById(id);
     }
 
-//    @Override
-//    public void remove(Integer id) {
-//        vehicleRepository.delete(id);
-//    }
+
 }

@@ -7,11 +7,9 @@ import java.util.List;
 public interface IVehicleService {
     List<Vehicle> findAll();
 
-    Vehicle saveVehicle(Vehicle vehicle);
+    Vehicle save(Vehicle vehicle);
 
     Vehicle findById(int id);
 
-    void update(Vehicle vehicle);
-
-//    void remove(Integer id);
+    void remove(Integer id);
 }

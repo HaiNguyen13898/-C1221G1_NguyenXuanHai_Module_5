@@ -4,74 +4,50 @@
     <fieldset>
       <table style="margin-left: auto; margin-right: auto">
         <tr>
-          <th>Số xe</th>
-          <td><input style="background: red" disabled formControlName="bienSo" class="form-control" type="text"></td>
+          <th>Hãng Xe</th>
+          <td>
+            <select [compareWith]="equals" formControlName="carManufacturer" class="form-control">
+              <option *ngFor="let hx of hangXe" [ngValue]="hx">{{hx.nameCarManufacturer}}</option>
+            </select>
+          </td>
+          <td>
+            <p style="color: red"
+               *ngIf="danhSachs.controls.carManufacturer.hasError('required')
+               && danhSachs.controls.carManufacturer.touched">Không được để trống</p>
+          </td>
         </tr>
         <tr>
           <th>Loại xe</th>
-          <td><input formControlName="loaiXe" class="form-control" type="text"></td>
+          <td>
+            <select [compareWith]="equals" formControlName="typeVehicle" class="form-control">
+              <option *ngFor="let lx of loaiXe" [ngValue]="lx" >{{lx.nameTypeVehicle}}</option>
+            </select>
+          </td>
           <td>
             <p style="color: red"
-               *ngIf="danhSachs.controls.loaiXe.hasError('required')
-               && danhSachs.controls.loaiXe.touched">Không được để trống</p>
+               *ngIf="danhSachs.controls.typeVehicle.hasError('required')
+               && danhSachs.controls.typeVehicle.touched">Không được để trống</p>
           </td>
         </tr>
         <tr>
-          <th>Tên Nhà xe</th>
-          <td><input formControlName="tenNhaXe" class="form-control" type="text"></td>
+          <th>Biển số xe</th>
+          <td><input formControlName="licensePlates" class="form-control" type="text"></td>
           <td>
             <p style="color: red"
-               *ngIf="danhSachs.controls.tenNhaXe.hasError('required')
-               && danhSachs.controls.tenNhaXe.touched">Không được để trống</p>
-          </td>
-
-        </tr>
-        <tr>
-          <th>Điểm đi</th>
-          <select formControlName="diemDi" class="form-control">
-            <option value=" ">Chọn Điểm đi</option>
-            <option value="Đà Nẵng">Đà Nẵng</option>
-            <option value="Quảng Bình">Quảng Bình</option>
-            <option value="Hà Tĩnh">Hà Tĩnh</option>
-            <option value="Quy Nhơn">Quy Nhơn</option>
-            <option value="Hà Nội">Hà Nội</option>
-            <option value="Hồ Chí Minh">Hồ Chí Minh</option>
-            <option value="Huế">Huế</option>
-          </select>
-          <td>
-            <p style="color: red"
-               *ngIf="danhSachs.controls.diemDi.hasError('required')
-               && danhSachs.controls.diemDi.touched">Không được để trống</p>
-          </td>
-        </tr>
-        <tr>
-          <th>Điểm đến</th>
-          <select formControlName="diemDen" class="form-control">
-            <option value=" ">Chọn Điểm đến</option>
-            <option value="Đà Nẵng">Đà Nẵng</option>
-            <option value="Quảng Bình">Quảng Bình</option>
-            <option value="Hà Tĩnh">Hà Tĩnh</option>
-            <option value="Quy Nhơn">Quy Nhơn</option>
-            <option value="Hà Nội">Hà Nội</option>
-            <option value="Hồ Chí Minh">Hồ Chí Minh</option>
-            <option value="Huế">Huế</option>
-          </select>
-          <td>
-            <p style="color: red"
-               *ngIf="danhSachs.controls.diemDen.hasError('required')
-               && danhSachs.controls.diemDen.touched">Không được để trống</p>
+               *ngIf="danhSachs.controls.licensePlates.hasError('required')
+               && danhSachs.controls.licensePlates.touched">Không được để trống</p>
           </td>
         </tr>
         <tr>
           <th>Số điện thoại</th>
-          <td><input formControlName="sdt" class="form-control" type="text"></td>
+          <td><input formControlName="phoneNumber" class="form-control" type="text"></td>
           <td>
             <p style="color: red"
-               *ngIf="danhSachs.controls.sdt.hasError('required')
-               && danhSachs.controls.sdt.touched">Không được để trống</p>
+               *ngIf="danhSachs.controls.phoneNumber.hasError('required')
+               && danhSachs.controls.phoneNumber.touched">Không được để trống</p>
             <p style="color: red"
-               *ngIf="danhSachs.controls.sdt.hasError('pattern')
-               && danhSachs.controls.sdt.touched">Số điện thoại không hợp lệ (Đầu số 090,093,097 và có 10 số)</p>
+               *ngIf="danhSachs.controls.phoneNumber.hasError('pattern')
+               && danhSachs.controls.phoneNumber.touched">Số điện thoại không hợp lệ (Đầu số 090,093,097 và có 10 số)</p>
           </td>
         </tr>
         <tr>
@@ -87,33 +63,53 @@
           </td>
         </tr>
         <tr>
-          <th>Giờ đi</th>
-          <td><input formControlName="gioDi" class="form-control" type="time"></td>
+          <th>Điểm đi</th>
+          <td>
+            <select [compareWith]="equals" formControlName="location2" class="form-control">
+              <option *ngFor="let dd of diaDiem" [ngValue]="dd" >{{dd.nameLocation}}</option>
+            </select>
+          </td>
           <td>
             <p style="color: red"
-               *ngIf="danhSachs.controls.gioDi.hasError('required')
-               && danhSachs.controls.gioDi.touched">Không được để trống</p>
-
+               *ngIf="danhSachs.controls.location2.hasError('required')
+               && danhSachs.controls.location2.touched">Không được để trống</p>
+          </td>
+        </tr>
+        <tr>
+          <th>Điểm đến</th>
+          <td>
+            <select [compareWith]="equals" formControlName="location" class="form-control">
+              <option *ngFor="let dd of diaDiem" [ngValue]="dd" >{{dd.nameLocation}}</option>
+            </select>
+          </td>
+          <td>
+            <p style="color: red"
+               *ngIf="danhSachs.controls.location.hasError('required')
+               && danhSachs.controls.location.touched">Không được để trống</p>
+          </td>
+        </tr>
+        <tr>
+          <th>Giờ đi</th>
+          <td><input formControlName="timeStart" class="form-control" type="time"></td>
+          <td>
+            <p style="color: red"
+               *ngIf="danhSachs.controls.timeStart.hasError('required')
+               && danhSachs.controls.timeStart.touched">Không được để trống</p>
           </td>
         </tr>
         <tr>
           <th>Giờ đến</th>
-          <td><input formControlName="gioDen" class="form-control" type="time"></td>
+          <td><input formControlName="timeFinish" class="form-control" type="time"></td>
           <td>
             <p style="color: red"
-               *ngIf="danhSachs.controls.gioDen.hasError('required')
-               && danhSachs.controls.gioDen.touched">Không được để trống</p>
+               *ngIf="danhSachs.controls.timeFinish.hasError('required')
+               && danhSachs.controls.timeFinish.touched">Không được để trống</p>
           </td>
         </tr>
-        <tr>
-          <td>
-            <a class="btn btn-dark" style="color: white" routerLink="/">Huỷ</a>
-          </td>
-          <td>
-            <button class="btn btn-primary" type="submit">Sửa</button>
-          </td>
-        </tr>
-
+        <td></td>
+        <td>
+          <button  class="btn btn-primary" type="submit">Submit</button>
+        </td>
       </table>
     </fieldset>
   </form>

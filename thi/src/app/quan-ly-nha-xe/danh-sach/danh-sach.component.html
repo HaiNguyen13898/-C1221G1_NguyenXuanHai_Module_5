@@ -2,7 +2,7 @@
   <div class="container">
     <h3 style="text-align: center">Danh sách xe</h3>
     <nav class="navbar  navbar-light bg-light justify-content-between">
-      <a class="btn btn-lg btn-outline-dark bg-light" (click)="troll()"  style="color: #0b0b0b"><i
+      <a class="btn btn-lg btn-outline-dark bg-light" routerLink="/create"  style="color: #0b0b0b"><i
         class="fa-solid fa-circle-plus"></i> Tạo mới</a>
 
     </nav>
@@ -35,12 +35,12 @@
           <td>{{x.timeStart}}</td>
           <td>{{x.timeFinish}}</td>
           <td>
-            <a [routerLink]="['/update', x.idVehicle]" class="btn btn-lg bg-light"><i
+            <a [routerLink]="['/update', x.id]" class="btn btn-lg bg-light"><i
               class="fa-xl fa-solid fa-user-pen" style="color: #7c1212"></i></a>
           </td>
           <td>
             <a class="btn btn-lg bg-light" data-toggle="modal" data-target="#deleteModal"
-               (click)="infor(x.idVehicle , x.licensePlates)">
+               (click)="infor(x.id , x.licensePlates)">
               <i class="fa-xl fa-solid fa-user-slash" style="color: #7c1212"></i></a>
           </td>
         </tr>
@@ -62,7 +62,7 @@
             <p>Biển số xe: {{soXe}}</p>
           </div>
           <div class="modal-footer">
-            <button (click)="delete(idDel)"  type="submit" data-dismiss="modal" class="btn btn-primary">Xoá
+            <button (click)="delete(idDel)" type="submit" data-dismiss="modal" class="btn btn-primary">Xoá
             </button>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
           </div>

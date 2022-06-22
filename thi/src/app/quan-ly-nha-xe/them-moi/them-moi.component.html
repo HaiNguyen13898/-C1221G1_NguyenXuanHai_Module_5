@@ -1,0 +1,115 @@
+<div class="table">
+  <form [formGroup]="createForm" (ngSubmit)="create()">
+    <fieldset>
+      <legend style="text-align: center">Thêm mới</legend>
+      <table style="margin-left: auto; margin-right: auto">
+        <tr>
+          <th>Hãng Xe</th>
+          <td>
+            <select formControlName="carManufacturer" class="form-control">
+              <option *ngFor="let hx of hangXe" [ngValue]="hx">{{hx.nameCarManufacturer}}</option>
+
+<!--              <option *ngFor="let type of carTypeList" [ngValue]="type"-->
+<!--                      [selected]="type.name == createForm.controls.carType.value.name">{{type.name}}</option>-->
+            </select>
+          </td>
+          <!--          <td>-->
+          <!--            <p style="color: red"-->
+          <!--               *ngIf="createCustomerForm.controls.codeCustomer.hasError('pattern')-->
+          <!--               && createCustomerForm.controls.codeCustomer.dirty">Mã KH không hợp lệ (KH-XXXX)</p>-->
+          <!--          </td>-->
+        </tr>
+        <tr>
+          <th>Loại xe</th>
+          <td>
+            <select formControlName="typeVehicle" class="form-control">
+              <option *ngFor="let lx of loaiXe" [ngValue]="lx" >{{lx.nameTypeVehicle}}</option>
+            </select>
+          </td>
+          <!--          <td>-->
+          <!--            <p style="color: red"-->
+          <!--               *ngIf="createCustomerForm.controls.codeCustomer.hasError('pattern')-->
+          <!--               && createCustomerForm.controls.codeCustomer.dirty">Mã KH không hợp lệ (KH-XXXX)</p>-->
+          <!--          </td>-->
+        </tr>
+        <tr>
+          <th>Biển số xe</th>
+          <td><input formControlName="licensePlates" class="form-control" type="text"></td>
+          <!--          <td>-->
+          <!--            <p style="color: red"-->
+          <!--               *ngIf="createCustomerForm.controls.idCard.hasError('pattern')-->
+          <!--               && createCustomerForm.controls.idCard.dirty">Sai định dạnh (Nhập 9 số, không được nhập chữ)</p>-->
+          <!--          </td>-->
+        </tr>
+        <tr>
+          <th>Số điện thoại</th>
+          <td><input formControlName="phoneNumber" class="form-control" type="text"></td>
+          <!--          <td>-->
+          <!--            <p style="color: red"-->
+          <!--               *ngIf="createCustomerForm.controls.idCard.hasError('pattern')-->
+          <!--               && createCustomerForm.controls.idCard.dirty">Sai định dạnh (Nhập 9 số, không được nhập chữ)</p>-->
+          <!--          </td>-->
+        </tr>
+        <tr>
+          <th>Email</th>
+          <td><input formControlName="email" class="form-control" type="text"></td>
+          <!--          <td>-->
+          <!--            <p style="color: red"-->
+          <!--               *ngIf="createCustomerForm.controls.idCard.hasError('pattern')-->
+          <!--               && createCustomerForm.controls.idCard.dirty">Sai định dạnh (Nhập 9 số, không được nhập chữ)</p>-->
+          <!--          </td>-->
+        </tr>
+        <tr>
+          <th>Điểm đi</th>
+          <td>
+            <select formControlName="location2" class="form-control">
+              <option *ngFor="let dd of diaDiem" [ngValue]="dd" >{{dd.nameLocation}}</option>
+            </select>
+          </td>
+          <!--          <td>-->
+          <!--            <p style="color: red"-->
+          <!--               *ngIf="createCustomerForm.controls.codeCustomer.hasError('pattern')-->
+          <!--               && createCustomerForm.controls.codeCustomer.dirty">Mã KH không hợp lệ (KH-XXXX)</p>-->
+          <!--          </td>-->
+        </tr>
+        <tr>
+          <th>Điểm đến</th>
+          <td>
+            <select formControlName="location" class="form-control">
+              <option *ngFor="let dd of diaDiem" [ngValue]="dd" >{{dd.nameLocation}}</option>
+            </select>
+          </td>
+          <!--          <td>-->
+          <!--            <p style="color: red"-->
+          <!--               *ngIf="createCustomerForm.controls.codeCustomer.hasError('pattern')-->
+          <!--               && createCustomerForm.controls.codeCustomer.dirty">Mã KH không hợp lệ (KH-XXXX)</p>-->
+          <!--          </td>-->
+        </tr>
+        <tr>
+          <th>Giờ đi</th>
+          <td><input formControlName="timeStart" class="form-control" type="time"></td>
+          <!--          <td>-->
+          <!--            <p style="color: red"-->
+          <!--               *ngIf="createCustomerForm.controls.idCard.hasError('pattern')-->
+          <!--               && createCustomerForm.controls.idCard.dirty">Sai định dạnh (Nhập 9 số, không được nhập chữ)</p>-->
+          <!--          </td>-->
+        </tr>
+        <tr>
+          <th>Giờ đến</th>
+          <td><input formControlName="timeFinish" class="form-control" type="time"></td>
+          <!--          <td>-->
+          <!--            <p style="color: red"-->
+          <!--               *ngIf="createCustomerForm.controls.idCard.hasError('pattern')-->
+          <!--               && createCustomerForm.controls.idCard.dirty">Sai định dạnh (Nhập 9 số, không được nhập chữ)</p>-->
+          <!--          </td>-->
+        </tr>
+        <td></td>
+        <td>
+          <button  class="btn btn-primary" type="submit">Submit</button>
+        </td>
+      </table>
+    </fieldset>
+  </form>
+</div>
+
+

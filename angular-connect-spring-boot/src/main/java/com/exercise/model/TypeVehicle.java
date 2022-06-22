@@ -17,8 +17,8 @@ import java.util.List;
 public class TypeVehicle {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idTypeVehicle;
-        private String nameTypeVehicle;
+    private int id;
+    private String nameTypeVehicle;
 
     @JsonBackReference
     @OneToMany(mappedBy = "typeVehicle")

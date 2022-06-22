@@ -1,4 +1,4 @@
 export interface LoaiXe {
-  idTypeVehicle?: number;
+  id?: number;
   nameTypeVehicle?: string;
 }

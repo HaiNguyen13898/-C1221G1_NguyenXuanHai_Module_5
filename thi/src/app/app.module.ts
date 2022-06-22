@@ -10,6 +10,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { DanhSachComponent } from './quan-ly-nha-xe/danh-sach/danh-sach.component';
 import { SuaComponent } from './quan-ly-nha-xe/sua/sua.component';
+import { ThemMoiComponent } from './quan-ly-nha-xe/them-moi/them-moi.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { SuaComponent } from './quan-ly-nha-xe/sua/sua.component';
     FooterComponent,
     DanhSachComponent,
     SuaComponent,
+    ThemMoiComponent,
   ],
   imports: [
     BrowserModule,
